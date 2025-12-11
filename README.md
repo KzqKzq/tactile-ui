@@ -6,7 +6,7 @@
 </h1>
 
 <p align="center">
-  <strong>灵感源自 Smartisan OS 的拟物化 React 组件库</strong>
+  <strong>一款注重触感与真实体验的拟物化 React 组件库</strong>
 </p>
 
 <p align="center">

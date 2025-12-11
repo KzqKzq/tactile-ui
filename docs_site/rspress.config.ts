@@ -9,7 +9,7 @@ export default defineConfig({
     root: 'docs',
     base: '/tactile-ui/', // GitHub Pages base path
     title: 'Tactile UI',
-    description: '灵感源自 Smartisan OS 的拟物化 React 组件库',
+    description: '一款注重触感与真实体验的拟物化 React 组件库',
     icon: '/logo.svg',
     logo: '/logo.svg',
     plugins: [
