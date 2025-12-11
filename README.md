@@ -1,4 +1,8 @@
 
+<div align="right">
+  <strong>English</strong> | <a href="./README.zh-CN.md">简体中文</a>
+</div>
+
 <h1 align="center">
   <img src="https://raw.githubusercontent.com/KzqKzq/tactile-ui/main/docs_site/docs/public/logo.svg" alt="Tactile UI Logo" width="120">
   <br>
@@ -6,7 +10,7 @@
 </h1>
 
 <p align="center">
-  <strong>一款注重触感与真实体验的拟物化 React 组件库</strong>
+  <strong>A skeuomorphic React component library focusing on tactile experience</strong>
 </p>
 
 <p align="center">
@@ -22,25 +26,25 @@
 </p>
 
 <p align="center">
-  <a href="#特性">特性</a> •
-  <a href="#安装">安装</a> •
-  <a href="#快速上手">快速上手</a> •
-  <a href="#文档">文档</a>
+  <a href="#features">Features</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#documentation">Documentation</a>
 </p>
 
 ---
 
-## 🎨 特性
+## 🎨 Features
 
-- **拟物化设计**：精心调配的阴影、纹理和光效，还原真实触感。
-- **现代化技术栈**：基于 React 19 和 Radix UI 构建。
-- **类型安全**：完全使用 TypeScript 编写，提供优秀的开发体验。
-- **开箱即用**：提供 30+ 常用组件，覆盖大多数业务场景。
-- **暗色模式**：内置暗色模式支持，自动适配系统主题。
+- **Skeuomorphic Design**: Carefully tuned shadows, textures, and lighting effects to restore tactile realism.
+- **Modern Tech Stack**: Built with React 19 and Radix UI.
+- **Type Safe**: Written entirely in TypeScript for an excellent developer experience.
+- **Ready to Use**: Provides 30+ common components covering most business scenarios.
+- **Dark Mode**: Built-in dark mode support that automatically adapts to system themes.
 
-## 📦 安装
+## 📦 Installation
 
-使用你喜欢的包管理器安装：
+Install using your preferred package manager:
 
 ```bash
 # npm
@@ -53,15 +57,15 @@ pnpm add @kzqkzq/tactile-ui
 yarn add @kzqkzq/tactile-ui
 ```
 
-## 🚀 快速上手
+## 🚀 Quick Start
 
-1. 引入样式文件（建议在项目入口处）：
+1. Import style file (recommended at the entry point of your project):
 
 ```tsx
 import '@kzqkzq/tactile-ui/style.css';
 ```
 
-2. 使用组件：
+2. Use components:
 
 ```tsx
 import { Button, Card, CardBody } from '@kzqkzq/tactile-ui';
@@ -71,18 +75,18 @@ function App() {
     <Card>
       <CardBody>
         <h2>Hello, Tactile UI!</h2>
-        <Button variant="primary">点击体验</Button>
+        <Button variant="primary">Click Me</Button>
       </CardBody>
     </Card>
   );
 }
 ```
 
-## 📖 文档
+## 📖 Documentation
 
-完整文档请参考我们项目中的 `docs_site` 目录，或者直接访问我们的在线文档（即将上线）。
+For full documentation, please refer to the `docs_site` directory in our project, or visit our [Online Documentation](https://kzqkzq.github.io/tactile-ui/).
 
-本地运行文档：
+Running documentation locally:
 
 ```bash
 cd docs_site
@@ -90,10 +94,10 @@ pnpm install
 pnpm dev
 ```
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Contributions via Issues and Pull Requests are welcome!
 
-## 📄 许可证
+## 📄 License
 
-本项目基于 [MIT 许可证](LICENSE) 开源。
+This project is licensed under the [MIT License](LICENSE).
