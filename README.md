@@ -1,73 +1,99 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/KzqKzq/tactile-ui/main/docs_site/docs/public/logo.svg" alt="Tactile UI Logo" width="120">
+  <br>
+  Tactile UI
+</h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  <strong>灵感源自 Smartisan OS 的拟物化 React 组件库</strong>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <a href="https://www.npmjs.com/package/@kzqkzq/tactile-ui">
+    <img src="https://img.shields.io/npm/v/@kzqkzq/tactile-ui?style=flat-square&color=c1272d" alt="npm version">
+  </a>
+  <a href="https://github.com/KzqKzq/tactile-ui/blob/main/LICENSE">
+    <img src="https://img.shields.io/npm/l/@kzqkzq/tactile-ui?style=flat-square" alt="license">
+  </a>
+  <a href="https://github.com/KzqKzq/tactile-ui">
+    <img src="https://img.shields.io/github/stars/KzqKzq/tactile-ui?style=flat-square" alt="stars">
+  </a>
+</p>
 
-## React Compiler
+<p align="center">
+  <a href="#特性">特性</a> •
+  <a href="#安装">安装</a> •
+  <a href="#快速上手">快速上手</a> •
+  <a href="#文档">文档</a>
+</p>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎨 特性
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **拟物化设计**：精心调配的阴影、纹理和光效，还原真实触感。
+- **现代化技术栈**：基于 React 19 和 Radix UI 构建。
+- **类型安全**：完全使用 TypeScript 编写，提供优秀的开发体验。
+- **开箱即用**：提供 30+ 常用组件，覆盖大多数业务场景。
+- **暗色模式**：内置暗色模式支持，自动适配系统主题。
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 安装
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+使用你喜欢的包管理器安装：
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# npm
+npm install @kzqkzq/tactile-ui
+
+# pnpm
+pnpm add @kzqkzq/tactile-ui
+
+# yarn
+yarn add @kzqkzq/tactile-ui
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 快速上手
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. 引入样式文件（建议在项目入口处）：
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```tsx
+import '@kzqkzq/tactile-ui/style.css';
 ```
+
+2. 使用组件：
+
+```tsx
+import { Button, Card, CardBody } from '@kzqkzq/tactile-ui';
+
+function App() {
+  return (
+    <Card>
+      <CardBody>
+        <h2>Hello, Tactile UI!</h2>
+        <Button variant="primary">点击体验</Button>
+      </CardBody>
+    </Card>
+  );
+}
+```
+
+## 📖 文档
+
+完整文档请参考我们项目中的 `docs_site` 目录，或者直接访问我们的在线文档（即将上线）。
+
+本地运行文档：
+
+```bash
+cd docs_site
+pnpm install
+pnpm dev
+```
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+## 📄 许可证
+
+本项目基于 [MIT 许可证](LICENSE) 开源。
