@@ -1,0 +1,294 @@
+/* ============================================
+   Smartisan UI Design Tokens
+   Inspired by Smartisan OS Skeuomorphic Design
+   ============================================ */
+
+:root {
+  /* ==========================================
+     Color Palette
+     ========================================== */
+  
+  /* Primary Colors */
+  --smt-primary: #1a1a2e;
+  --smt-primary-light: #2d2d44;
+  --smt-primary-dark: #0f0f1a;
+  
+  /* Accent - Smartisan Red */
+  --smt-accent: #c1272d;
+  --smt-accent-light: #e63946;
+  --smt-accent-dark: #9b1f24;
+  --smt-accent-glow: rgba(193, 39, 45, 0.4);
+  
+  /* Surface Colors */
+  --smt-surface: #f5f5f0;
+  --smt-surface-light: #fafaf7;
+  --smt-surface-dark: #e8e8e3;
+  --smt-surface-inset: #e0e0db;
+  
+  /* Background */
+  --smt-bg: #eaeae5;
+  --smt-bg-dark: #2a2a3a;
+  
+  /* Text Colors */
+  --smt-text-primary: #1a1a2e;
+  --smt-text-secondary: #5a5a6e;
+  --smt-text-muted: #8a8a9e;
+  --smt-text-inverse: #ffffff;
+  
+  /* Status Colors */
+  --smt-success: #2d8659;
+  --smt-success-light: #3fa06e;
+  --smt-warning: #d4a017;
+  --smt-error: #c1272d;
+  --smt-info: #3498db;
+  
+  /* ==========================================
+     Gradients - 3D Surface Effects
+     ========================================== */
+  
+  /* Button Gradients */
+  --smt-gradient-button: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f5f5f0 5%,
+    #e8e8e3 95%,
+    #d8d8d3 100%
+  );
+  
+  --smt-gradient-button-hover: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fafaf7 5%,
+    #edede8 95%,
+    #e0e0db 100%
+  );
+  
+  --smt-gradient-button-pressed: linear-gradient(
+    180deg,
+    #d8d8d3 0%,
+    #e0e0db 5%,
+    #e8e8e3 95%,
+    #f0f0eb 100%
+  );
+  
+  --smt-gradient-button-primary: linear-gradient(
+    180deg,
+    #e63946 0%,
+    #c1272d 50%,
+    #9b1f24 100%
+  );
+  
+  --smt-gradient-button-primary-hover: linear-gradient(
+    180deg,
+    #f04956 0%,
+    #d4343a 50%,
+    #a82329 100%
+  );
+  
+  --smt-gradient-button-primary-pressed: linear-gradient(
+    180deg,
+    #9b1f24 0%,
+    #b02428 50%,
+    #c1272d 100%
+  );
+  
+  /* Metal/Chrome Gradients */
+  --smt-gradient-metal: linear-gradient(
+    180deg,
+    #e8e8e8 0%,
+    #d0d0d0 25%,
+    #c0c0c0 50%,
+    #d0d0d0 75%,
+    #e8e8e8 100%
+  );
+  
+  --smt-gradient-chrome: linear-gradient(
+    180deg,
+    #f0f0f0 0%,
+    #c8c8c8 20%,
+    #a8a8a8 50%,
+    #c8c8c8 80%,
+    #f0f0f0 100%
+  );
+  
+  /* Glass Effect Gradient */
+  --smt-gradient-glass: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
+  
+  /* Switch Track Gradients */
+  --smt-gradient-track-off: linear-gradient(
+    180deg,
+    #c8c8c8 0%,
+    #e0e0e0 100%
+  );
+  
+  --smt-gradient-track-on: linear-gradient(
+    180deg,
+    #3fa06e 0%,
+    #2d8659 100%
+  );
+  
+  /* ==========================================
+     Shadows - Multi-Layer Depth System
+     ========================================== */
+  
+  /* Raised Elements (Buttons, Cards) */
+  --smt-shadow-raised: 
+    0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.05) inset,
+    0 1px 2px 0 rgba(0, 0, 0, 0.1),
+    0 2px 4px 0 rgba(0, 0, 0, 0.08),
+    0 4px 8px 0 rgba(0, 0, 0, 0.06);
+  
+  --smt-shadow-raised-hover: 
+    0 1px 0 0 rgba(255, 255, 255, 0.95) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.03) inset,
+    0 2px 4px 0 rgba(0, 0, 0, 0.12),
+    0 4px 8px 0 rgba(0, 0, 0, 0.1),
+    0 8px 16px 0 rgba(0, 0, 0, 0.08);
+  
+  /* Pressed/Inset Elements */
+  --smt-shadow-pressed: 
+    0 2px 4px 0 rgba(0, 0, 0, 0.15) inset,
+    0 1px 2px 0 rgba(0, 0, 0, 0.1) inset,
+    0 -1px 0 0 rgba(255, 255, 255, 0.5) inset;
+  
+  --smt-shadow-inset: 
+    0 2px 6px 0 rgba(0, 0, 0, 0.12) inset,
+    0 1px 2px 0 rgba(0, 0, 0, 0.08) inset;
+  
+  --smt-shadow-inset-deep: 
+    0 3px 8px 0 rgba(0, 0, 0, 0.18) inset,
+    0 1px 3px 0 rgba(0, 0, 0, 0.12) inset;
+  
+  /* Floating Elements (Dialogs, Tooltips) */
+  --smt-shadow-floating: 
+    0 4px 12px 0 rgba(0, 0, 0, 0.15),
+    0 8px 24px 0 rgba(0, 0, 0, 0.12),
+    0 16px 48px 0 rgba(0, 0, 0, 0.1);
+  
+  --smt-shadow-floating-heavy: 
+    0 8px 24px 0 rgba(0, 0, 0, 0.2),
+    0 16px 48px 0 rgba(0, 0, 0, 0.15),
+    0 32px 96px 0 rgba(0, 0, 0, 0.1);
+  
+  /* Subtle Shadows */
+  --smt-shadow-subtle: 
+    0 1px 2px 0 rgba(0, 0, 0, 0.06),
+    0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  
+  /* Glow Effects */
+  --smt-shadow-glow-accent: 
+    0 0 8px 0 var(--smt-accent-glow),
+    0 0 16px 0 rgba(193, 39, 45, 0.2);
+  
+  --smt-shadow-glow-success: 
+    0 0 8px 0 rgba(45, 134, 89, 0.4),
+    0 0 16px 0 rgba(45, 134, 89, 0.2);
+  
+  /* ==========================================
+     Borders
+     ========================================== */
+  
+  --smt-border-light: 1px solid rgba(0, 0, 0, 0.08);
+  --smt-border-medium: 1px solid rgba(0, 0, 0, 0.12);
+  --smt-border-dark: 1px solid rgba(0, 0, 0, 0.2);
+  --smt-border-raised: 1px solid rgba(0, 0, 0, 0.1);
+  --smt-border-inset: 1px solid rgba(0, 0, 0, 0.15);
+  
+  /* ==========================================
+     Border Radius
+     ========================================== */
+  
+  --smt-radius-xs: 4px;
+  --smt-radius-sm: 6px;
+  --smt-radius-md: 8px;
+  --smt-radius-lg: 12px;
+  --smt-radius-xl: 16px;
+  --smt-radius-2xl: 24px;
+  --smt-radius-full: 9999px;
+  
+  /* ==========================================
+     Spacing
+     ========================================== */
+  
+  --smt-space-xs: 4px;
+  --smt-space-sm: 8px;
+  --smt-space-md: 12px;
+  --smt-space-lg: 16px;
+  --smt-space-xl: 24px;
+  --smt-space-2xl: 32px;
+  --smt-space-3xl: 48px;
+  
+  /* ==========================================
+     Typography
+     ========================================== */
+  
+  --smt-font-family: 
+    -apple-system, 
+    BlinkMacSystemFont, 
+    "Segoe UI", 
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    Roboto, 
+    Oxygen, 
+    Ubuntu, 
+    sans-serif;
+  
+  --smt-font-size-xs: 11px;
+  --smt-font-size-sm: 13px;
+  --smt-font-size-md: 15px;
+  --smt-font-size-lg: 17px;
+  --smt-font-size-xl: 20px;
+  --smt-font-size-2xl: 24px;
+  --smt-font-size-3xl: 32px;
+  
+  --smt-font-weight-normal: 400;
+  --smt-font-weight-medium: 500;
+  --smt-font-weight-semibold: 600;
+  --smt-font-weight-bold: 700;
+  
+  --smt-line-height-tight: 1.2;
+  --smt-line-height-normal: 1.5;
+  --smt-line-height-relaxed: 1.75;
+  
+  /* ==========================================
+     Transitions
+     ========================================== */
+  
+  --smt-transition-fast: 0.1s ease-out;
+  --smt-transition-normal: 0.2s ease-out;
+  --smt-transition-slow: 0.3s ease-out;
+  --smt-transition-spring: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* ==========================================
+     Z-Index Scale
+     ========================================== */
+  
+  --smt-z-base: 0;
+  --smt-z-dropdown: 100;
+  --smt-z-sticky: 200;
+  --smt-z-overlay: 300;
+  --smt-z-modal: 400;
+  --smt-z-toast: 500;
+  --smt-z-tooltip: 600;
+}
+
+/* ==========================================
+   Texture Patterns (SVG Data URIs)
+   ========================================== */
+
+:root {
+  /* Subtle noise texture for surfaces */
+  --smt-texture-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  
+  /* Brushed metal texture */
+  --smt-texture-brushed: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='brush' patternUnits='userSpaceOnUse' width='100' height='2'%3E%3Cline x1='0' y1='1' x2='100' y2='1' stroke='rgba(0,0,0,0.02)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23brush)'/%3E%3C/svg%3E");
+  
+  /* Leather texture */
+  --smt-texture-leather: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='leather'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.15' numOctaves='3' result='noise'/%3E%3CfeDiffuseLighting in='noise' lighting-color='%23888' surfaceScale='2'%3E%3CfeDistantLight azimuth='45' elevation='60'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23leather)' opacity='0.08'/%3E%3C/svg%3E");
+}

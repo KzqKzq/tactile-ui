@@ -1,0 +1,151 @@
+/* ============================================
+   Smartisan Tag Component Styles
+   ============================================ */
+
+/* Base Tag */
+.smt-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    padding: 4px 10px;
+
+    font-family: var(--smt-font-family);
+    font-size: var(--smt-font-size-xs);
+    font-weight: var(--smt-font-weight-medium);
+    color: var(--smt-text-secondary);
+    text-decoration: none;
+
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.02) 0%,
+            rgba(0, 0, 0, 0.04) 100%);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--smt-radius-full);
+
+    cursor: pointer;
+    transition:
+        background var(--smt-transition-fast),
+        border-color var(--smt-transition-fast),
+        color var(--smt-transition-fast);
+}
+
+.smt-tag:hover {
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.04) 0%,
+            rgba(0, 0, 0, 0.06) 100%);
+    color: var(--smt-text-primary);
+}
+
+/* Tag Icon */
+.smt-tag-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+}
+
+/* Tag Count */
+.smt-tag-count {
+    font-size: 10px;
+    color: var(--smt-text-muted);
+    margin-left: 2px;
+}
+
+/* ==========================================
+   Tag Variants
+   ========================================== */
+
+/* Primary */
+.smt-tag--primary {
+    background: linear-gradient(180deg,
+            rgba(193, 39, 45, 0.08) 0%,
+            rgba(193, 39, 45, 0.12) 100%);
+    border-color: rgba(193, 39, 45, 0.2);
+    color: var(--smt-accent);
+}
+
+.smt-tag--primary:hover {
+    background: linear-gradient(180deg,
+            rgba(193, 39, 45, 0.12) 0%,
+            rgba(193, 39, 45, 0.16) 100%);
+}
+
+/* Solid */
+.smt-tag--solid {
+    background: linear-gradient(180deg,
+            var(--smt-accent-light) 0%,
+            var(--smt-accent) 50%,
+            var(--smt-accent-dark) 100%);
+    border: none;
+    color: white;
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.2) inset,
+        0 1px 2px 0 rgba(193, 39, 45, 0.3);
+}
+
+.smt-tag--solid:hover {
+    background: linear-gradient(180deg,
+            var(--smt-accent) 0%,
+            var(--smt-accent-dark) 100%);
+}
+
+/* ==========================================
+   Tag Sizes
+   ========================================== */
+
+.smt-tag--sm {
+    padding: 2px 8px;
+    font-size: 10px;
+}
+
+.smt-tag--lg {
+    padding: 6px 14px;
+    font-size: var(--smt-font-size-sm);
+}
+
+/* ==========================================
+   Tag Group
+   ========================================== */
+
+.smt-tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--smt-space-sm);
+}
+
+/* ==========================================
+   Removable Tag
+   ========================================== */
+
+.smt-tag--removable {
+    padding-right: 6px;
+}
+
+.smt-tag-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 14px;
+    height: 14px;
+    margin-left: 2px;
+
+    background: rgba(0, 0, 0, 0.08);
+    border: none;
+    border-radius: var(--smt-radius-full);
+
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity var(--smt-transition-fast);
+}
+
+.smt-tag-remove:hover {
+    opacity: 1;
+}
+
+.smt-tag-remove svg {
+    width: 8px;
+    height: 8px;
+}

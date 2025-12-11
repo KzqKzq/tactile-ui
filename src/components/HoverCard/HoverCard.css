@@ -1,0 +1,116 @@
+/* ============================================
+   Smartisan HoverCard Component Styles
+   ============================================ */
+
+/* HoverCard Content */
+.smt-hover-card {
+    min-width: 280px;
+    padding: var(--smt-space-lg);
+
+    background: linear-gradient(180deg,
+            #ffffff 0%,
+            #fafafa 50%,
+            #f5f5f0 100%);
+    border-radius: var(--smt-radius-lg);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    box-shadow: var(--smt-shadow-floating);
+
+    z-index: var(--smt-z-tooltip);
+
+    animation-duration: 0.2s;
+    animation-timing-function: ease-out;
+}
+
+.smt-hover-card[data-state="open"][data-side="top"] {
+    animation-name: smt-hover-card-slide-up;
+}
+
+.smt-hover-card[data-state="open"][data-side="bottom"] {
+    animation-name: smt-hover-card-slide-down;
+}
+
+@keyframes smt-hover-card-slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes smt-hover-card-slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HoverCard Arrow */
+.smt-hover-card-arrow {
+    fill: #fafafa;
+    filter: drop-shadow(0 -1px 1px rgba(0, 0, 0, 0.05));
+}
+
+/* ==========================================
+   Author Card Layout (common use case)
+   ========================================== */
+
+.smt-hover-card-author {
+    display: flex;
+    gap: var(--smt-space-md);
+}
+
+.smt-hover-card-author-avatar {
+    flex-shrink: 0;
+}
+
+.smt-hover-card-author-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.smt-hover-card-author-name {
+    font-size: var(--smt-font-size-md);
+    font-weight: var(--smt-font-weight-semibold);
+    color: var(--smt-text-primary);
+    margin: 0 0 4px;
+}
+
+.smt-hover-card-author-bio {
+    font-size: var(--smt-font-size-sm);
+    color: var(--smt-text-secondary);
+    margin: 0;
+    line-height: var(--smt-line-height-normal);
+}
+
+.smt-hover-card-author-stats {
+    display: flex;
+    gap: var(--smt-space-lg);
+    margin-top: var(--smt-space-md);
+    padding-top: var(--smt-space-md);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.smt-hover-card-stat {
+    text-align: center;
+}
+
+.smt-hover-card-stat-value {
+    font-size: var(--smt-font-size-lg);
+    font-weight: var(--smt-font-weight-bold);
+    color: var(--smt-text-primary);
+}
+
+.smt-hover-card-stat-label {
+    font-size: var(--smt-font-size-xs);
+    color: var(--smt-text-muted);
+}

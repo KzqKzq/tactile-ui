@@ -1,0 +1,230 @@
+/* ============================================
+   Smartisan Badge Component Styles
+   ============================================ */
+
+/* Base Badge */
+.smt-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2px 8px;
+    min-height: 20px;
+
+    font-family: var(--smt-font-family);
+    font-size: var(--smt-font-size-xs);
+    font-weight: var(--smt-font-weight-semibold);
+    line-height: 1;
+    white-space: nowrap;
+
+    border-radius: var(--smt-radius-full);
+
+    transition:
+        transform var(--smt-transition-fast),
+        box-shadow var(--smt-transition-fast);
+}
+
+/* ==========================================
+   Badge Variants
+   ========================================== */
+
+/* Default - Raised metallic */
+.smt-badge--default {
+    background: linear-gradient(180deg,
+            #f0f0f0 0%,
+            #e0e0e0 50%,
+            #d0d0d0 100%);
+    color: var(--smt-text-primary);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.8) inset,
+        0 -1px 0 0 rgba(0, 0, 0, 0.05) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Primary - Accent color */
+.smt-badge--primary {
+    background: linear-gradient(180deg,
+            var(--smt-accent-light) 0%,
+            var(--smt-accent) 50%,
+            var(--smt-accent-dark) 100%);
+    color: var(--smt-text-inverse);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.25) inset,
+        0 -1px 0 0 rgba(0, 0, 0, 0.1) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.15),
+        0 0 6px 0 var(--smt-accent-glow);
+}
+
+/* Success */
+.smt-badge--success {
+    background: linear-gradient(180deg,
+            var(--smt-success-light) 0%,
+            var(--smt-success) 50%,
+            #246b47 100%);
+    color: var(--smt-text-inverse);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.25) inset,
+        0 -1px 0 0 rgba(0, 0, 0, 0.1) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.15),
+        0 0 6px 0 rgba(45, 134, 89, 0.4);
+}
+
+/* Warning */
+.smt-badge--warning {
+    background: linear-gradient(180deg,
+            #f0c030 0%,
+            var(--smt-warning) 50%,
+            #b88a12 100%);
+    color: #1a1a2e;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.35) inset,
+        0 -1px 0 0 rgba(0, 0, 0, 0.1) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.15),
+        0 0 6px 0 rgba(212, 160, 23, 0.4);
+}
+
+/* Error/Danger */
+.smt-badge--error {
+    background: linear-gradient(180deg,
+            #f04956 0%,
+            var(--smt-error) 50%,
+            #9b1f24 100%);
+    color: var(--smt-text-inverse);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.25) inset,
+        0 -1px 0 0 rgba(0, 0, 0, 0.1) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.15),
+        0 0 6px 0 rgba(193, 39, 45, 0.4);
+}
+
+/* Info */
+.smt-badge--info {
+    background: linear-gradient(180deg,
+            #5dade2 0%,
+            var(--smt-info) 50%,
+            #2980b9 100%);
+    color: var(--smt-text-inverse);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.25) inset,
+        0 -1px 0 0 rgba(0, 0, 0, 0.1) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.15),
+        0 0 6px 0 rgba(52, 152, 219, 0.4);
+}
+
+/* Outline variants */
+.smt-badge--outline {
+    background: transparent;
+    border: 1.5px solid currentColor;
+    color: var(--smt-text-secondary);
+    box-shadow: none;
+}
+
+.smt-badge--outline-primary {
+    background: transparent;
+    border: 1.5px solid var(--smt-accent);
+    color: var(--smt-accent);
+    box-shadow: none;
+}
+
+/* ==========================================
+   Badge Sizes
+   ========================================== */
+
+.smt-badge--sm {
+    padding: 1px 6px;
+    min-height: 16px;
+    font-size: 10px;
+}
+
+.smt-badge--lg {
+    padding: 4px 12px;
+    min-height: 26px;
+    font-size: var(--smt-font-size-sm);
+}
+
+/* ==========================================
+   Badge with Dot
+   ========================================== */
+
+.smt-badge--dot {
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    min-height: 8px;
+    border-radius: var(--smt-radius-full);
+}
+
+.smt-badge--dot.smt-badge--lg {
+    width: 12px;
+    height: 12px;
+}
+
+/* Pulsing dot animation */
+.smt-badge--pulse {
+    animation: smt-badge-pulse 2s ease-in-out infinite;
+}
+
+@keyframes smt-badge-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+/* ==========================================
+   Badge with Icon
+   ========================================== */
+
+.smt-badge__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+}
+
+.smt-badge--sm .smt-badge__icon {
+    width: 10px;
+    height: 10px;
+    margin-right: 3px;
+}
+
+/* ==========================================
+   Badge positioned (for notifications)
+   ========================================== */
+
+.smt-badge-container {
+    position: relative;
+    display: inline-flex;
+}
+
+.smt-badge--positioned {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    z-index: 1;
+}
+
+.smt-badge--positioned.smt-badge--dot {
+    top: -2px;
+    right: -2px;
+}

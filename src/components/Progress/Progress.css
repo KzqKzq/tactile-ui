@@ -1,0 +1,214 @@
+/* ============================================
+   Smartisan Progress Component Styles
+   ============================================ */
+
+/* Progress Root */
+.smt-progress {
+    position: relative;
+    width: 100%;
+    height: 12px;
+
+    background: linear-gradient(180deg,
+            #b0b0b0 0%,
+            #c8c8c8 30%,
+            #d8d8d8 100%);
+    border-radius: var(--smt-radius-full);
+
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.15) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.1) inset,
+        0 -1px 0 0 rgba(255, 255, 255, 0.6);
+
+    overflow: hidden;
+}
+
+/* Brushed texture on track */
+.smt-progress::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg,
+            transparent 0px,
+            transparent 1px,
+            rgba(0, 0, 0, 0.015) 1px,
+            rgba(0, 0, 0, 0.015) 2px);
+    pointer-events: none;
+}
+
+/* Progress Indicator */
+.smt-progress-indicator {
+    height: 100%;
+
+    background: linear-gradient(180deg,
+            var(--smt-accent-light) 0%,
+            var(--smt-accent) 50%,
+            var(--smt-accent-dark) 100%);
+    border-radius: var(--smt-radius-full);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.3) inset,
+        0 -1px 0 0 rgba(0, 0, 0, 0.15) inset;
+
+    transition: width 0.3s ease-out;
+}
+
+/* Glossy highlight on indicator */
+.smt-progress-indicator::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    height: 40%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    border-radius: var(--smt-radius-full);
+    pointer-events: none;
+}
+
+/* Animated shimmer effect */
+.smt-progress-indicator::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 100%);
+    background-size: 200% 100%;
+    animation: smt-shimmer 2s linear infinite;
+    border-radius: inherit;
+}
+
+/* ==========================================
+   Progress Variants
+   ========================================== */
+
+/* Success */
+.smt-progress--success .smt-progress-indicator {
+    background: linear-gradient(180deg,
+            var(--smt-success-light) 0%,
+            var(--smt-success) 50%,
+            #246b47 100%);
+}
+
+/* Warning */
+.smt-progress--warning .smt-progress-indicator {
+    background: linear-gradient(180deg,
+            #f0c030 0%,
+            var(--smt-warning) 50%,
+            #b88a12 100%);
+}
+
+/* Info */
+.smt-progress--info .smt-progress-indicator {
+    background: linear-gradient(180deg,
+            #5dade2 0%,
+            var(--smt-info) 50%,
+            #2980b9 100%);
+}
+
+/* ==========================================
+   Progress Sizes
+   ========================================== */
+
+.smt-progress--sm {
+    height: 8px;
+}
+
+.smt-progress--lg {
+    height: 16px;
+}
+
+.smt-progress--xl {
+    height: 24px;
+}
+
+/* ==========================================
+   Indeterminate State
+   ========================================== */
+
+.smt-progress--indeterminate .smt-progress-indicator {
+    width: 40% !important;
+    animation: smt-progress-indeterminate 1.5s ease-in-out infinite;
+}
+
+@keyframes smt-progress-indeterminate {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(250%);
+    }
+}
+
+/* ==========================================
+   Progress with Label
+   ========================================== */
+
+.smt-progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smt-space-sm);
+    width: 100%;
+}
+
+.smt-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.smt-progress-label {
+    font-size: var(--smt-font-size-sm);
+    font-weight: var(--smt-font-weight-medium);
+    color: var(--smt-text-primary);
+}
+
+.smt-progress-value {
+    font-size: var(--smt-font-size-sm);
+    font-weight: var(--smt-font-weight-semibold);
+    color: var(--smt-text-secondary);
+}
+
+/* ==========================================
+   Circular Progress
+   ========================================== */
+
+.smt-progress-circular {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smt-progress-circular svg {
+    transform: rotate(-90deg);
+}
+
+.smt-progress-circular-track {
+    fill: none;
+    stroke: #d0d0d0;
+    stroke-width: 8;
+}
+
+.smt-progress-circular-indicator {
+    fill: none;
+    stroke: var(--smt-accent);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.3s ease-out;
+    filter: drop-shadow(0 0 4px var(--smt-accent-glow));
+}
+
+.smt-progress-circular-value {
+    position: absolute;
+    font-size: var(--smt-font-size-lg);
+    font-weight: var(--smt-font-weight-bold);
+    color: var(--smt-text-primary);
+}

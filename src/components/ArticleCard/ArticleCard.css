@@ -1,0 +1,255 @@
+/* ============================================
+   Smartisan ArticleCard Component Styles
+   ============================================ */
+
+/* ArticleCard Base */
+.smt-article-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    background: linear-gradient(180deg,
+            #ffffff 0%,
+            #fafafa 50%,
+            #f5f5f0 100%);
+    border-radius: var(--smt-radius-lg);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+
+    box-shadow: var(--smt-shadow-raised);
+
+    overflow: hidden;
+    transition:
+        transform var(--smt-transition-normal),
+        box-shadow var(--smt-transition-normal);
+}
+
+.smt-article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--smt-shadow-floating);
+}
+
+/* ArticleCard Cover */
+.smt-article-card-cover {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.smt-article-card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--smt-transition-normal);
+}
+
+.smt-article-card:hover .smt-article-card-cover img {
+    transform: scale(1.05);
+}
+
+/* Cover Overlay */
+.smt-article-card-cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(0, 0, 0, 0.4) 100%);
+    opacity: 0;
+    transition: opacity var(--smt-transition-normal);
+}
+
+.smt-article-card:hover .smt-article-card-cover-overlay {
+    opacity: 1;
+}
+
+/* ArticleCard Content */
+.smt-article-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--smt-space-lg);
+}
+
+/* Category */
+.smt-article-card-category {
+    font-size: var(--smt-font-size-xs);
+    font-weight: var(--smt-font-weight-semibold);
+    color: var(--smt-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--smt-space-sm);
+}
+
+/* Title */
+.smt-article-card-title {
+    font-size: var(--smt-font-size-lg);
+    font-weight: var(--smt-font-weight-bold);
+    color: var(--smt-text-primary);
+    line-height: var(--smt-line-height-tight);
+    margin: 0 0 var(--smt-space-sm);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.smt-article-card-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.smt-article-card-title a:hover {
+    color: var(--smt-accent);
+}
+
+/* Excerpt */
+.smt-article-card-excerpt {
+    font-size: var(--smt-font-size-sm);
+    color: var(--smt-text-secondary);
+    line-height: var(--smt-line-height-normal);
+    margin: 0 0 var(--smt-space-md);
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Meta */
+.smt-article-card-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--smt-space-md);
+    margin-top: auto;
+    padding-top: var(--smt-space-md);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Author */
+.smt-article-card-author {
+    display: flex;
+    align-items: center;
+    gap: var(--smt-space-sm);
+}
+
+.smt-article-card-author-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: var(--smt-radius-full);
+    object-fit: cover;
+}
+
+.smt-article-card-author-name {
+    font-size: var(--smt-font-size-sm);
+    font-weight: var(--smt-font-weight-medium);
+    color: var(--smt-text-primary);
+}
+
+/* Date */
+.smt-article-card-date {
+    font-size: var(--smt-font-size-xs);
+    color: var(--smt-text-muted);
+    margin-left: auto;
+}
+
+/* Tags */
+.smt-article-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--smt-space-xs);
+    margin-top: var(--smt-space-md);
+}
+
+/* ==========================================
+   Horizontal Variant
+   ========================================== */
+
+.smt-article-card--horizontal {
+    flex-direction: row;
+}
+
+.smt-article-card--horizontal .smt-article-card-cover {
+    width: 280px;
+    flex-shrink: 0;
+}
+
+.smt-article-card--horizontal .smt-article-card-content {
+    justify-content: center;
+}
+
+/* ==========================================
+   Featured Variant
+   ========================================== */
+
+.smt-article-card--featured {
+    min-height: 400px;
+}
+
+.smt-article-card--featured .smt-article-card-cover {
+    position: absolute;
+    inset: 0;
+}
+
+.smt-article-card--featured .smt-article-card-cover-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(0, 0, 0, 0.7) 100%);
+}
+
+.smt-article-card--featured .smt-article-card-content {
+    position: relative;
+    margin-top: auto;
+    z-index: 1;
+}
+
+.smt-article-card--featured .smt-article-card-title,
+.smt-article-card--featured .smt-article-card-excerpt,
+.smt-article-card--featured .smt-article-card-author-name,
+.smt-article-card--featured .smt-article-card-date {
+    color: white;
+}
+
+.smt-article-card--featured .smt-article-card-category {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.smt-article-card--featured .smt-article-card-meta {
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================
+   Compact Variant
+   ========================================== */
+
+.smt-article-card--compact {
+    flex-direction: row;
+    align-items: center;
+    padding: var(--smt-space-md);
+    gap: var(--smt-space-md);
+}
+
+.smt-article-card--compact .smt-article-card-cover {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--smt-radius-md);
+    flex-shrink: 0;
+}
+
+.smt-article-card--compact .smt-article-card-content {
+    padding: 0;
+}
+
+.smt-article-card--compact .smt-article-card-title {
+    font-size: var(--smt-font-size-md);
+    -webkit-line-clamp: 1;
+}
+
+.smt-article-card--compact .smt-article-card-excerpt {
+    display: none;
+}
+
+.smt-article-card--compact .smt-article-card-meta {
+    border-top: none;
+    padding-top: var(--smt-space-xs);
+}

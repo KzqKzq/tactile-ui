@@ -1,0 +1,34 @@
+# AspectRatio 宽高比
+
+保持固定宽高比的容器。
+
+## 基础用法
+
+```vue preview
+<template>
+  <div style="width: 300px;">
+    <AspectRatio :ratio="16/9" rounded shadow>
+      <img 
+        src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=450&fit=crop" 
+        alt="示例图片"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      />
+    </AspectRatio>
+  </div>
+</template>
+
+<script setup>
+import { AspectRatio } from '../../src/components'
+</script>
+```
+
+## API
+
+### Props
+
+| 属性 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| ratio | 宽高比 | `number` | `16/9` |
+| rounded | 圆角 | `boolean \| 'lg'` | `false` |
+| shadow | 阴影 | `boolean` | `false` |
+| border | 边框 | `boolean` | `false` |

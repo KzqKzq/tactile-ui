@@ -1,0 +1,183 @@
+/* ============================================
+   Smartisan Checkbox Component Styles
+   ============================================ */
+
+/* Checkbox Root */
+.smt-checkbox {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+
+    background: linear-gradient(180deg,
+            #d8d8d8 0%,
+            #e8e8e8 100%);
+    border-radius: var(--smt-radius-sm);
+    border: none;
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.15) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.1) inset,
+        0 -1px 0 0 rgba(255, 255, 255, 0.8);
+
+    transition:
+        background var(--smt-transition-fast),
+        box-shadow var(--smt-transition-fast),
+        transform var(--smt-transition-fast);
+}
+
+/* Inner recess effect */
+.smt-checkbox::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: linear-gradient(180deg,
+            #c8c8c8 0%,
+            #e0e0e0 100%);
+    border-radius: calc(var(--smt-radius-sm) - 1px);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1) inset;
+}
+
+/* Checked State */
+.smt-checkbox[data-state="checked"] {
+    background: linear-gradient(180deg,
+            var(--smt-accent-light) 0%,
+            var(--smt-accent) 50%,
+            var(--smt-accent-dark) 100%);
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.3) inset,
+        0 -1px 0 0 rgba(0, 0, 0, 0.2) inset,
+        0 2px 4px 0 rgba(0, 0, 0, 0.15),
+        0 0 8px 0 var(--smt-accent-glow);
+}
+
+.smt-checkbox[data-state="checked"]::before {
+    background: transparent;
+    box-shadow: none;
+}
+
+/* Checkmark Icon */
+.smt-checkbox-indicator {
+    position: relative;
+    z-index: 1;
+    color: var(--smt-text-inverse);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smt-checkbox-indicator svg {
+    width: 14px;
+    height: 14px;
+    stroke-width: 3;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+/* Hover State */
+.smt-checkbox:hover:not(:disabled) {
+    transform: scale(1.05);
+}
+
+.smt-checkbox:hover:not(:disabled):not([data-state="checked"]) {
+    background: linear-gradient(180deg,
+            #d0d0d0 0%,
+            #e0e0e0 100%);
+}
+
+/* Active/Press State */
+.smt-checkbox:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+/* Focus State */
+.smt-checkbox:focus-visible {
+    outline: none;
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.15) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.1) inset,
+        0 0 0 3px var(--smt-accent-glow);
+}
+
+/* Disabled State */
+.smt-checkbox:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Indeterminate State */
+.smt-checkbox[data-state="indeterminate"] {
+    background: linear-gradient(180deg,
+            #888 0%,
+            #666 100%);
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.2) inset,
+        0 -1px 0 0 rgba(0, 0, 0, 0.2) inset,
+        0 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.smt-checkbox[data-state="indeterminate"]::before {
+    background: transparent;
+}
+
+/* ==========================================
+   Checkbox Sizes
+   ========================================== */
+
+.smt-checkbox--sm {
+    width: 18px;
+    height: 18px;
+}
+
+.smt-checkbox--sm .smt-checkbox-indicator svg {
+    width: 11px;
+    height: 11px;
+}
+
+.smt-checkbox--lg {
+    width: 26px;
+    height: 26px;
+    border-radius: var(--smt-radius-md);
+}
+
+.smt-checkbox--lg .smt-checkbox-indicator svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ==========================================
+   Checkbox with Label
+   ========================================== */
+
+.smt-checkbox-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--smt-space-md);
+}
+
+.smt-checkbox-label {
+    font-size: var(--smt-font-size-md);
+    font-weight: var(--smt-font-weight-normal);
+    color: var(--smt-text-primary);
+    cursor: pointer;
+    user-select: none;
+    line-height: 1.4;
+}
+
+.smt-checkbox-label--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Description text */
+.smt-checkbox-description {
+    font-size: var(--smt-font-size-sm);
+    color: var(--smt-text-secondary);
+    margin-top: 2px;
+}

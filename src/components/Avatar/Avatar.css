@@ -1,0 +1,244 @@
+/* ============================================
+   Smartisan Avatar Component Styles
+   ============================================ */
+
+/* Base Avatar */
+.smt-avatar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: var(--smt-radius-full);
+    overflow: hidden;
+
+    background: linear-gradient(180deg,
+            #e0e0e0 0%,
+            #c8c8c8 100%);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
+        0 -1px 0 0 rgba(0, 0, 0, 0.1) inset,
+        0 2px 4px 0 rgba(0, 0, 0, 0.15);
+
+    flex-shrink: 0;
+}
+
+/* Metallic ring around avatar */
+.smt-avatar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid transparent;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0.1) 100%) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Avatar Image */
+.smt-avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+/* Avatar Fallback (initials or icon) */
+.smt-avatar-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    font-family: var(--smt-font-family);
+    font-size: var(--smt-font-size-sm);
+    font-weight: var(--smt-font-weight-semibold);
+    color: var(--smt-text-secondary);
+    text-transform: uppercase;
+
+    background: linear-gradient(180deg,
+            #e8e8e8 0%,
+            #d0d0d0 100%);
+}
+
+/* ==========================================
+   Avatar Sizes
+   ========================================== */
+
+.smt-avatar--xs {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+}
+
+.smt-avatar--sm {
+    width: 32px;
+    height: 32px;
+    font-size: var(--smt-font-size-xs);
+}
+
+.smt-avatar--lg {
+    width: 56px;
+    height: 56px;
+    font-size: var(--smt-font-size-lg);
+}
+
+.smt-avatar--xl {
+    width: 80px;
+    height: 80px;
+    font-size: var(--smt-font-size-2xl);
+}
+
+.smt-avatar--2xl {
+    width: 120px;
+    height: 120px;
+    font-size: var(--smt-font-size-3xl);
+}
+
+/* ==========================================
+   Avatar Shapes
+   ========================================== */
+
+.smt-avatar--square {
+    border-radius: var(--smt-radius-md);
+}
+
+.smt-avatar--square::before {
+    border-radius: var(--smt-radius-md);
+}
+
+.smt-avatar--rounded {
+    border-radius: var(--smt-radius-lg);
+}
+
+.smt-avatar--rounded::before {
+    border-radius: var(--smt-radius-lg);
+}
+
+/* ==========================================
+   Avatar with Status Indicator
+   ========================================== */
+
+.smt-avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.smt-avatar-status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: var(--smt-radius-full);
+    border: 2px solid var(--smt-surface);
+
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.smt-avatar-status--online {
+    background: linear-gradient(180deg,
+            var(--smt-success-light) 0%,
+            var(--smt-success) 100%);
+}
+
+.smt-avatar-status--offline {
+    background: linear-gradient(180deg,
+            #a0a0a0 0%,
+            #808080 100%);
+}
+
+.smt-avatar-status--busy {
+    background: linear-gradient(180deg,
+            var(--smt-accent-light) 0%,
+            var(--smt-accent) 100%);
+}
+
+.smt-avatar-status--away {
+    background: linear-gradient(180deg,
+            #f0c030 0%,
+            var(--smt-warning) 100%);
+}
+
+/* Size adjustments for status */
+.smt-avatar--xs+.smt-avatar-status,
+.smt-avatar-container--xs .smt-avatar-status {
+    width: 8px;
+    height: 8px;
+    border-width: 1px;
+}
+
+.smt-avatar--lg+.smt-avatar-status,
+.smt-avatar-container--lg .smt-avatar-status {
+    width: 16px;
+    height: 16px;
+    border-width: 3px;
+}
+
+.smt-avatar--xl+.smt-avatar-status,
+.smt-avatar-container--xl .smt-avatar-status {
+    width: 20px;
+    height: 20px;
+    border-width: 3px;
+}
+
+/* ==========================================
+   Avatar Group
+   ========================================== */
+
+.smt-avatar-group {
+    display: flex;
+    align-items: center;
+}
+
+.smt-avatar-group .smt-avatar {
+    margin-left: -12px;
+    border: 2px solid var(--smt-surface);
+    transition:
+        transform var(--smt-transition-fast),
+        z-index var(--smt-transition-fast);
+}
+
+.smt-avatar-group .smt-avatar:first-child {
+    margin-left: 0;
+}
+
+.smt-avatar-group .smt-avatar:hover {
+    transform: translateY(-4px);
+    z-index: 10;
+}
+
+/* Count badge for overflow */
+.smt-avatar-group-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    margin-left: -12px;
+
+    font-size: var(--smt-font-size-sm);
+    font-weight: var(--smt-font-weight-semibold);
+    color: var(--smt-text-secondary);
+
+    background: linear-gradient(180deg,
+            #f0f0f0 0%,
+            #e0e0e0 100%);
+    border-radius: var(--smt-radius-full);
+    border: 2px solid var(--smt-surface);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.6) inset,
+        0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}

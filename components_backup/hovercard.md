@@ -1,0 +1,36 @@
+# HoverCard 悬浮卡片
+
+悬停时显示的卡片，常用于展示用户信息。
+
+## 基础用法
+
+```vue preview
+<template>
+  <AuthorHoverCard
+    name="张三"
+    bio="前端开发工程师，热爱开源"
+    :avatar="Avatar"
+    :stats="[
+      { label: '文章', value: '42' },
+      { label: '粉丝', value: '1.2k' }
+    ]"
+  >
+    <Button variant="ghost">@张三</Button>
+  </AuthorHoverCard>
+</template>
+
+<script setup>
+import { AuthorHoverCard, Button, Avatar } from '../../src/components'
+</script>
+```
+
+## API
+
+### AuthorHoverCard Props
+
+| 属性 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| name | 名称 | `string` | - |
+| bio | 简介 | `string` | - |
+| avatar | 头像元素 | `ReactNode` | - |
+| stats | 统计数据 | `Array<{label: string, value: string \| number}>` | - |

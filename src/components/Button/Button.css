@@ -1,0 +1,308 @@
+/* ============================================
+   Smartisan Button Component Styles
+   ============================================ */
+
+/* Base Button */
+.smt-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--smt-space-sm);
+
+    padding: var(--smt-space-md) var(--smt-space-xl);
+    min-height: 44px;
+    min-width: 88px;
+
+    font-family: var(--smt-font-family);
+    font-size: var(--smt-font-size-md);
+    font-weight: var(--smt-font-weight-medium);
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+
+    border-radius: var(--smt-radius-md);
+    border: none;
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+        transform var(--smt-transition-fast),
+        box-shadow var(--smt-transition-fast),
+        background var(--smt-transition-fast);
+
+    /* Default variant styling */
+    background: var(--smt-gradient-button);
+    color: var(--smt-text-primary);
+    box-shadow: var(--smt-shadow-raised);
+}
+
+/* Inner highlight for 3D effect */
+.smt-button::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    height: 40%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.5) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    border-radius: var(--smt-radius-md) var(--smt-radius-md) 50% 50%;
+    pointer-events: none;
+}
+
+/* Bottom edge highlight */
+.smt-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 2px;
+    right: 2px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 0 0 var(--smt-radius-md) var(--smt-radius-md);
+    pointer-events: none;
+}
+
+/* Hover State */
+.smt-button:hover:not(:disabled) {
+    background: var(--smt-gradient-button-hover);
+    box-shadow: var(--smt-shadow-raised-hover);
+    transform: translateY(-1px);
+}
+
+/* Active/Pressed State */
+.smt-button:active:not(:disabled) {
+    background: var(--smt-gradient-button-pressed);
+    box-shadow: var(--smt-shadow-pressed);
+    transform: translateY(1px);
+}
+
+.smt-button:active:not(:disabled)::before {
+    opacity: 0;
+}
+
+.smt-button:active:not(:disabled)::after {
+    opacity: 0;
+}
+
+/* Focus State */
+.smt-button:focus-visible {
+    outline: none;
+    box-shadow:
+        var(--smt-shadow-raised),
+        0 0 0 3px var(--smt-accent-glow);
+}
+
+/* Disabled State */
+.smt-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ==========================================
+   Button Variants
+   ========================================== */
+
+/* Primary (Accent) Button */
+.smt-button--primary {
+    background: var(--smt-gradient-button-primary);
+    color: var(--smt-text-inverse);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.smt-button--primary::before {
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.25) 0%,
+            rgba(255, 255, 255, 0) 100%);
+}
+
+.smt-button--primary::after {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.smt-button--primary:hover:not(:disabled) {
+    background: var(--smt-gradient-button-primary-hover);
+}
+
+.smt-button--primary:active:not(:disabled) {
+    background: var(--smt-gradient-button-primary-pressed);
+}
+
+.smt-button--primary:focus-visible {
+    box-shadow:
+        var(--smt-shadow-raised),
+        var(--smt-shadow-glow-accent);
+}
+
+/* Secondary (Outline) Button */
+.smt-button--secondary {
+    background: transparent;
+    color: var(--smt-text-primary);
+    border: 2px solid var(--smt-surface-dark);
+    box-shadow: none;
+}
+
+.smt-button--secondary::before,
+.smt-button--secondary::after {
+    display: none;
+}
+
+.smt-button--secondary:hover:not(:disabled) {
+    background: var(--smt-surface);
+    border-color: var(--smt-text-muted);
+    box-shadow: var(--smt-shadow-subtle);
+}
+
+.smt-button--secondary:active:not(:disabled) {
+    background: var(--smt-surface-dark);
+    box-shadow: var(--smt-shadow-inset);
+    transform: none;
+}
+
+/* Ghost Button */
+.smt-button--ghost {
+    background: transparent;
+    color: var(--smt-text-primary);
+    box-shadow: none;
+}
+
+.smt-button--ghost::before,
+.smt-button--ghost::after {
+    display: none;
+}
+
+.smt-button--ghost:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.05);
+    box-shadow: none;
+    transform: none;
+}
+
+.smt-button--ghost:active:not(:disabled) {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: none;
+    transform: none;
+}
+
+/* Danger Button */
+.smt-button--danger {
+    background: linear-gradient(180deg,
+            #f04956 0%,
+            #c1272d 50%,
+            #9b1f24 100%);
+    color: var(--smt-text-inverse);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.smt-button--danger::before {
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.25) 0%,
+            rgba(255, 255, 255, 0) 100%);
+}
+
+.smt-button--danger:hover:not(:disabled) {
+    background: linear-gradient(180deg,
+            #ff5a67 0%,
+            #d4343a 50%,
+            #a82329 100%);
+}
+
+.smt-button--danger:active:not(:disabled) {
+    background: linear-gradient(180deg,
+            #9b1f24 0%,
+            #b02428 50%,
+            #c1272d 100%);
+}
+
+/* ==========================================
+   Button Sizes
+   ========================================== */
+
+.smt-button--sm {
+    padding: var(--smt-space-sm) var(--smt-space-lg);
+    min-height: 36px;
+    min-width: 72px;
+    font-size: var(--smt-font-size-sm);
+    border-radius: var(--smt-radius-sm);
+}
+
+.smt-button--lg {
+    padding: var(--smt-space-lg) var(--smt-space-2xl);
+    min-height: 52px;
+    min-width: 104px;
+    font-size: var(--smt-font-size-lg);
+    border-radius: var(--smt-radius-lg);
+}
+
+/* ==========================================
+   Button with Icon
+   ========================================== */
+
+.smt-button__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+}
+
+.smt-button--sm .smt-button__icon {
+    width: 16px;
+    height: 16px;
+}
+
+.smt-button--lg .smt-button__icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Icon-only Button */
+.smt-button--icon-only {
+    min-width: 44px;
+    padding: var(--smt-space-md);
+}
+
+.smt-button--icon-only.smt-button--sm {
+    min-width: 36px;
+    padding: var(--smt-space-sm);
+}
+
+.smt-button--icon-only.smt-button--lg {
+    min-width: 52px;
+    padding: var(--smt-space-lg);
+}
+
+/* ==========================================
+   Button Loading State
+   ========================================== */
+
+.smt-button--loading {
+    color: transparent;
+    pointer-events: none;
+}
+
+.smt-button__spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: smt-spin 0.8s linear infinite;
+}
+
+@keyframes smt-spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.smt-button--primary .smt-button__spinner,
+.smt-button--danger .smt-button__spinner {
+    color: var(--smt-text-inverse);
+}

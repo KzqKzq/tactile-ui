@@ -1,0 +1,124 @@
+/* ============================================
+   Smartisan Pagination Component Styles
+   ============================================ */
+
+/* Pagination Container */
+.smt-pagination {
+    display: flex;
+    align-items: center;
+    gap: var(--smt-space-sm);
+}
+
+/* Pagination Item (shared styles) */
+.smt-pagination-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 36px;
+    height: 36px;
+    padding: 0 var(--smt-space-md);
+
+    font-family: var(--smt-font-family);
+    font-size: var(--smt-font-size-sm);
+    font-weight: var(--smt-font-weight-medium);
+    color: var(--smt-text-primary);
+    text-decoration: none;
+
+    background: var(--smt-gradient-button);
+    border: none;
+    border-radius: var(--smt-radius-md);
+
+    box-shadow: var(--smt-shadow-raised);
+
+    cursor: pointer;
+    transition:
+        transform var(--smt-transition-fast),
+        box-shadow var(--smt-transition-fast),
+        background var(--smt-transition-fast);
+}
+
+.smt-pagination-item:hover:not(:disabled):not(.smt-pagination-item--active) {
+    box-shadow: var(--smt-shadow-raised-hover);
+    transform: translateY(-1px);
+}
+
+.smt-pagination-item:active:not(:disabled) {
+    background: var(--smt-gradient-button-pressed);
+    box-shadow: var(--smt-shadow-pressed);
+    transform: translateY(1px);
+}
+
+/* Active State */
+.smt-pagination-item--active {
+    background: linear-gradient(180deg,
+            var(--smt-accent-light) 0%,
+            var(--smt-accent) 50%,
+            var(--smt-accent-dark) 100%);
+    color: white;
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.2) inset,
+        0 2px 4px 0 rgba(193, 39, 45, 0.3);
+}
+
+/* Disabled State */
+.smt-pagination-item:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Navigation Arrows */
+.smt-pagination-prev,
+.smt-pagination-next {
+    padding: 0;
+}
+
+.smt-pagination-prev svg,
+.smt-pagination-next svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Ellipsis */
+.smt-pagination-ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 36px;
+    height: 36px;
+
+    font-size: var(--smt-font-size-sm);
+    color: var(--smt-text-muted);
+}
+
+/* ==========================================
+   Pagination Sizes
+   ========================================== */
+
+.smt-pagination--sm .smt-pagination-item {
+    min-width: 28px;
+    height: 28px;
+    font-size: var(--smt-font-size-xs);
+}
+
+.smt-pagination--lg .smt-pagination-item {
+    min-width: 44px;
+    height: 44px;
+    font-size: var(--smt-font-size-md);
+}
+
+/* ==========================================
+   Simple Pagination (Prev/Next only)
+   ========================================== */
+
+.smt-pagination--simple {
+    gap: var(--smt-space-lg);
+}
+
+.smt-pagination--simple .smt-pagination-info {
+    font-size: var(--smt-font-size-sm);
+    color: var(--smt-text-secondary);
+}

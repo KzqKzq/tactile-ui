@@ -1,0 +1,54 @@
+# Skeleton 骨架屏
+
+骨架屏用于在内容加载时显示占位。
+
+## 基础用法
+
+```vue preview
+<template>
+  <div style="width: 300px;">
+    <Skeleton style="height: 20px; width: 100%;" />
+    <Skeleton style="height: 20px; width: 80%; margin-top: 8px;" />
+    <Skeleton style="height: 20px; width: 60%; margin-top: 8px;" />
+  </div>
+</template>
+
+<script setup>
+import { Skeleton } from '../../src/components'
+</script>
+```
+
+## 用户骨架屏
+
+```vue preview
+<template>
+  <SkeletonUser />
+</template>
+
+<script setup>
+import { SkeletonUser } from '../../src/components'
+</script>
+```
+
+## 卡片骨架屏
+
+```vue preview
+<template>
+  <div style="width: 320px;">
+    <SkeletonCard />
+  </div>
+</template>
+
+<script setup>
+import { SkeletonCard } from '../../src/components'
+</script>
+```
+
+## API
+
+### Skeleton Props
+
+| 属性 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| variant | 变体 | `'rect' \| 'circle' \| 'text'` | `'rect'` |
+| animation | 动画 | `'pulse' \| 'wave' \| 'none'` | `'pulse'` |

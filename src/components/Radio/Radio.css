@@ -1,0 +1,248 @@
+/* ============================================
+   Smartisan Radio Component Styles
+   ============================================ */
+
+/* Radio Group Container */
+.smt-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smt-space-md);
+}
+
+.smt-radio-group--horizontal {
+    flex-direction: row;
+    gap: var(--smt-space-xl);
+}
+
+/* Radio Item Wrapper */
+.smt-radio-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--smt-space-md);
+}
+
+/* Radio Button */
+.smt-radio {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+
+    background: linear-gradient(180deg,
+            #c8c8c8 0%,
+            #e0e0e0 100%);
+    border-radius: var(--smt-radius-full);
+    border: none;
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.15) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.1) inset,
+        0 -1px 0 0 rgba(255, 255, 255, 0.9);
+
+    transition:
+        background var(--smt-transition-fast),
+        box-shadow var(--smt-transition-fast),
+        transform var(--smt-transition-fast);
+}
+
+/* Metallic rim */
+.smt-radio::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: linear-gradient(180deg,
+            #b8b8b8 0%,
+            #d8d8d8 100%);
+    border-radius: var(--smt-radius-full);
+    box-shadow:
+        0 1px 2px 0 rgba(0, 0, 0, 0.12) inset;
+}
+
+/* Inner well */
+.smt-radio::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background: linear-gradient(180deg,
+            #d0d0d0 0%,
+            #e8e8e8 100%);
+    border-radius: var(--smt-radius-full);
+    box-shadow:
+        0 1px 3px 0 rgba(0, 0, 0, 0.15) inset;
+}
+
+/* Radio Indicator (LED dot) */
+.smt-radio-indicator {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.smt-radio-indicator::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: var(--smt-radius-full);
+
+    background: linear-gradient(180deg,
+            var(--smt-accent-light) 0%,
+            var(--smt-accent) 50%,
+            var(--smt-accent-dark) 100%);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.4) inset,
+        0 -1px 0 0 rgba(0, 0, 0, 0.2) inset,
+        0 0 8px 2px var(--smt-accent-glow),
+        0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+    animation: smt-radio-glow 2s ease-in-out infinite;
+}
+
+@keyframes smt-radio-glow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 1px 0 0 rgba(255, 255, 255, 0.4) inset,
+            0 -1px 0 0 rgba(0, 0, 0, 0.2) inset,
+            0 0 8px 2px var(--smt-accent-glow),
+            0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 1px 0 0 rgba(255, 255, 255, 0.4) inset,
+            0 -1px 0 0 rgba(0, 0, 0, 0.2) inset,
+            0 0 12px 4px var(--smt-accent-glow),
+            0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Hover State */
+.smt-radio:hover:not(:disabled) {
+    transform: scale(1.05);
+}
+
+.smt-radio:hover:not(:disabled)::after {
+    background: linear-gradient(180deg,
+            #c8c8c8 0%,
+            #e0e0e0 100%);
+}
+
+/* Active/Press State */
+.smt-radio:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+/* Focus State */
+.smt-radio:focus-visible {
+    outline: none;
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.15) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.1) inset,
+        0 0 0 3px var(--smt-accent-glow);
+}
+
+/* Disabled State */
+.smt-radio:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.smt-radio:disabled .smt-radio-indicator::after {
+    animation: none;
+}
+
+/* ==========================================
+   Radio Sizes
+   ========================================== */
+
+.smt-radio--sm {
+    width: 18px;
+    height: 18px;
+}
+
+.smt-radio--sm .smt-radio-indicator::after {
+    width: 8px;
+    height: 8px;
+}
+
+.smt-radio--lg {
+    width: 26px;
+    height: 26px;
+}
+
+.smt-radio--lg .smt-radio-indicator::after {
+    width: 12px;
+    height: 12px;
+}
+
+/* ==========================================
+   Radio Label
+   ========================================== */
+
+.smt-radio-label {
+    font-size: var(--smt-font-size-md);
+    font-weight: var(--smt-font-weight-normal);
+    color: var(--smt-text-primary);
+    cursor: pointer;
+    user-select: none;
+    line-height: 1.4;
+}
+
+.smt-radio-label--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.smt-radio-description {
+    font-size: var(--smt-font-size-sm);
+    color: var(--smt-text-secondary);
+    margin-top: 2px;
+}
+
+/* ==========================================
+   Radio Group with Card Style
+   ========================================== */
+
+.smt-radio-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--smt-space-md);
+    padding: var(--smt-space-lg);
+
+    background: var(--smt-gradient-button);
+    border-radius: var(--smt-radius-lg);
+    box-shadow: var(--smt-shadow-raised);
+
+    cursor: pointer;
+    transition:
+        box-shadow var(--smt-transition-fast),
+        transform var(--smt-transition-fast);
+}
+
+.smt-radio-card:hover {
+    box-shadow: var(--smt-shadow-raised-hover);
+    transform: translateY(-1px);
+}
+
+.smt-radio-card[data-state="checked"] {
+    box-shadow:
+        var(--smt-shadow-raised),
+        0 0 0 2px var(--smt-accent);
+}

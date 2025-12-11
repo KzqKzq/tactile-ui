@@ -1,0 +1,131 @@
+/* ============================================
+   Smartisan Tooltip Component Styles
+   ============================================ */
+
+/* Tooltip Content */
+.smt-tooltip-content {
+    position: relative;
+
+    padding: var(--smt-space-sm) var(--smt-space-md);
+    max-width: 280px;
+
+    font-size: var(--smt-font-size-sm);
+    font-weight: var(--smt-font-weight-normal);
+    color: var(--smt-text-primary);
+    line-height: var(--smt-line-height-normal);
+
+    background: linear-gradient(180deg,
+            #ffffff 0%,
+            #f8f8f8 50%,
+            #f0f0f0 100%);
+    border-radius: var(--smt-radius-md);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
+        0 4px 12px 0 rgba(0, 0, 0, 0.15),
+        0 2px 4px 0 rgba(0, 0, 0, 0.1);
+
+    z-index: var(--smt-z-tooltip);
+
+    animation: smt-tooltip-in 0.15s ease-out;
+}
+
+@keyframes smt-tooltip-in {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Top highlight */
+.smt-tooltip-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: var(--smt-radius-md) var(--smt-radius-md) 0 0;
+}
+
+/* Tooltip Arrow */
+.smt-tooltip-arrow {
+    fill: #f8f8f8;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+
+/* ==========================================
+   Dark Variant
+   ========================================== */
+
+.smt-tooltip-content--dark {
+    background: linear-gradient(180deg,
+            #3a3a4a 0%,
+            #2a2a3a 50%,
+            #1a1a2e 100%);
+    color: var(--smt-text-inverse);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.1) inset,
+        0 4px 12px 0 rgba(0, 0, 0, 0.3),
+        0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.smt-tooltip-content--dark::before {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.smt-tooltip-content--dark .smt-tooltip-arrow {
+    fill: #2a2a3a;
+}
+
+/* ==========================================
+   Accent Variant
+   ========================================== */
+
+.smt-tooltip-content--accent {
+    background: linear-gradient(180deg,
+            var(--smt-accent-light) 0%,
+            var(--smt-accent) 50%,
+            var(--smt-accent-dark) 100%);
+    color: var(--smt-text-inverse);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+    box-shadow:
+        0 1px 0 0 rgba(255, 255, 255, 0.2) inset,
+        0 4px 12px 0 rgba(0, 0, 0, 0.2),
+        0 0 8px 0 var(--smt-accent-glow);
+}
+
+.smt-tooltip-content--accent::before {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.smt-tooltip-content--accent .smt-tooltip-arrow {
+    fill: var(--smt-accent);
+}
+
+/* ==========================================
+   Tooltip Sizes
+   ========================================== */
+
+.smt-tooltip-content--sm {
+    padding: var(--smt-space-xs) var(--smt-space-sm);
+    font-size: var(--smt-font-size-xs);
+    max-width: 200px;
+}
+
+.smt-tooltip-content--lg {
+    padding: var(--smt-space-md) var(--smt-space-lg);
+    font-size: var(--smt-font-size-md);
+    max-width: 360px;
+}

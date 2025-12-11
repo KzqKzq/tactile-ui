@@ -1,0 +1,268 @@
+/* ============================================
+   Smartisan Input Component Styles
+   ============================================ */
+
+/* Input Wrapper */
+.smt-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smt-space-sm);
+    width: 100%;
+}
+
+/* Label */
+.smt-input-label {
+    font-size: var(--smt-font-size-sm);
+    font-weight: var(--smt-font-weight-medium);
+    color: var(--smt-text-primary);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.smt-input-label--required::after {
+    content: ' *';
+    color: var(--smt-accent);
+}
+
+/* Input Field Container */
+.smt-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Base Input Field */
+.smt-input {
+    width: 100%;
+    height: 44px;
+    padding: 0 var(--smt-space-lg);
+
+    font-family: var(--smt-font-family);
+    font-size: var(--smt-font-size-md);
+    color: var(--smt-text-primary);
+
+    background: linear-gradient(180deg,
+            #e8e8e3 0%,
+            #f5f5f0 100%);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: var(--smt-radius-md);
+
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.1) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.06) inset;
+
+    transition:
+        border-color var(--smt-transition-fast),
+        box-shadow var(--smt-transition-fast),
+        background var(--smt-transition-fast);
+}
+
+/* Paper texture effect */
+.smt-input::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--smt-texture-noise);
+    pointer-events: none;
+    border-radius: inherit;
+    opacity: 0.5;
+}
+
+/* Placeholder */
+.smt-input::placeholder {
+    color: var(--smt-text-muted);
+}
+
+/* Hover State */
+.smt-input:hover:not(:disabled):not(:focus) {
+    border-color: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(180deg,
+            #e5e5e0 0%,
+            #f2f2ed 100%);
+}
+
+/* Focus State */
+.smt-input:focus {
+    outline: none;
+    border-color: var(--smt-accent);
+    background: linear-gradient(180deg,
+            #f0f0eb 0%,
+            #fafaf7 100%);
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.08) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.04) inset,
+        0 0 0 3px var(--smt-accent-glow);
+}
+
+/* Disabled State */
+.smt-input:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: linear-gradient(180deg,
+            #d8d8d3 0%,
+            #e0e0db 100%);
+}
+
+/* Error State */
+.smt-input--error {
+    border-color: var(--smt-error);
+}
+
+.smt-input--error:focus {
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.08) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.04) inset,
+        0 0 0 3px rgba(193, 39, 45, 0.3);
+}
+
+/* Success State */
+.smt-input--success {
+    border-color: var(--smt-success);
+}
+
+.smt-input--success:focus {
+    box-shadow:
+        0 2px 4px 0 rgba(0, 0, 0, 0.08) inset,
+        0 1px 2px 0 rgba(0, 0, 0, 0.04) inset,
+        0 0 0 3px rgba(45, 134, 89, 0.3);
+}
+
+/* ==========================================
+   Input Sizes
+   ========================================== */
+
+.smt-input--sm {
+    height: 36px;
+    padding: 0 var(--smt-space-md);
+    font-size: var(--smt-font-size-sm);
+    border-radius: var(--smt-radius-sm);
+}
+
+.smt-input--lg {
+    height: 52px;
+    padding: 0 var(--smt-space-xl);
+    font-size: var(--smt-font-size-lg);
+    border-radius: var(--smt-radius-lg);
+}
+
+/* ==========================================
+   Input with Icons
+   ========================================== */
+
+.smt-input-container--with-icon-left .smt-input {
+    padding-left: 44px;
+}
+
+.smt-input-container--with-icon-right .smt-input {
+    padding-right: 44px;
+}
+
+.smt-input-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: var(--smt-text-muted);
+    pointer-events: none;
+}
+
+.smt-input-icon--left {
+    left: var(--smt-space-md);
+}
+
+.smt-input-icon--right {
+    right: var(--smt-space-md);
+}
+
+/* Clickable icon (e.g., clear button) */
+.smt-input-icon--clickable {
+    pointer-events: auto;
+    cursor: pointer;
+    border-radius: var(--smt-radius-sm);
+    padding: 4px;
+    transition:
+        color var(--smt-transition-fast),
+        background var(--smt-transition-fast);
+}
+
+.smt-input-icon--clickable:hover {
+    color: var(--smt-text-primary);
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================
+   Helper Text
+   ========================================== */
+
+.smt-input-helper {
+    font-size: var(--smt-font-size-xs);
+    color: var(--smt-text-secondary);
+}
+
+.smt-input-helper--error {
+    color: var(--smt-error);
+}
+
+.smt-input-helper--success {
+    color: var(--smt-success);
+}
+
+/* ==========================================
+   Textarea
+   ========================================== */
+
+.smt-textarea {
+    min-height: 100px;
+    padding: var(--smt-space-md) var(--smt-space-lg);
+    resize: vertical;
+    line-height: var(--smt-line-height-normal);
+}
+
+/* ==========================================
+   Input Group (with addons)
+   ========================================== */
+
+.smt-input-group {
+    display: flex;
+    align-items: stretch;
+}
+
+.smt-input-group .smt-input {
+    border-radius: 0;
+}
+
+.smt-input-group .smt-input:first-child {
+    border-top-left-radius: var(--smt-radius-md);
+    border-bottom-left-radius: var(--smt-radius-md);
+}
+
+.smt-input-group .smt-input:last-child {
+    border-top-right-radius: var(--smt-radius-md);
+    border-bottom-right-radius: var(--smt-radius-md);
+}
+
+.smt-input-addon {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--smt-space-lg);
+
+    font-size: var(--smt-font-size-md);
+    color: var(--smt-text-secondary);
+
+    background: var(--smt-gradient-button);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: var(--smt-shadow-raised);
+}
+
+.smt-input-addon:first-child {
+    border-right: none;
+    border-top-left-radius: var(--smt-radius-md);
+    border-bottom-left-radius: var(--smt-radius-md);
+}
+
+.smt-input-addon:last-child {
+    border-left: none;
+    border-top-right-radius: var(--smt-radius-md);
+    border-bottom-right-radius: var(--smt-radius-md);
+}

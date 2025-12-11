@@ -1,0 +1,41 @@
+# Tabs 标签页
+
+标签页用于在同一区域切换不同内容。
+
+## 基础用法
+
+```vue preview
+<template>
+  <Tabs defaultValue="tab1" style="width: 400px;">
+    <TabsList>
+      <TabsTrigger value="tab1">选项卡 1</TabsTrigger>
+      <TabsTrigger value="tab2">选项卡 2</TabsTrigger>
+      <TabsTrigger value="tab3">选项卡 3</TabsTrigger>
+    </TabsList>
+    <TabsContent value="tab1">
+      <p>这是选项卡 1 的内容</p>
+    </TabsContent>
+    <TabsContent value="tab2">
+      <p>这是选项卡 2 的内容</p>
+    </TabsContent>
+    <TabsContent value="tab3">
+      <p>这是选项卡 3 的内容</p>
+    </TabsContent>
+  </Tabs>
+</template>
+
+<script setup>
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../../src/components'
+</script>
+```
+
+## API
+
+### Tabs Props
+
+| 属性 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| value | 当前激活值 | `string` | - |
+| defaultValue | 默认激活值 | `string` | - |
+| onValueChange | 改变回调 | `(value: string) => void` | - |
+| orientation | 方向 | `'horizontal' \| 'vertical'` | `'horizontal'` |

@@ -1,0 +1,293 @@
+/* ============================================
+   Smartisan Drawer Component Styles
+   ============================================ */
+
+/* Drawer Overlay */
+.smt-drawer-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    z-index: var(--smt-z-modal);
+
+    animation: smt-fade-in 0.2s ease-out;
+}
+
+/* Drawer Content */
+.smt-drawer-content {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+
+    background: linear-gradient(180deg,
+            #ffffff 0%,
+            #fafafa 50%,
+            #f5f5f0 100%);
+
+    z-index: var(--smt-z-modal);
+
+    outline: none;
+}
+
+/* Top highlight */
+.smt-drawer-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* ==========================================
+   Drawer Positions
+   ========================================== */
+
+/* Right (default) */
+.smt-drawer-content--right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    max-width: 100vw;
+
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow:
+        -8px 0 24px rgba(0, 0, 0, 0.15),
+        -2px 0 8px rgba(0, 0, 0, 0.1);
+
+    animation: smt-drawer-slide-left 0.3s ease-out;
+}
+
+@keyframes smt-drawer-slide-left {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Left */
+.smt-drawer-content--left {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    max-width: 100vw;
+
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow:
+        8px 0 24px rgba(0, 0, 0, 0.15),
+        2px 0 8px rgba(0, 0, 0, 0.1);
+
+    animation: smt-drawer-slide-right 0.3s ease-out;
+}
+
+@keyframes smt-drawer-slide-right {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Top */
+.smt-drawer-content--top {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    max-height: 80vh;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.15),
+        0 2px 8px rgba(0, 0, 0, 0.1);
+
+    animation: smt-drawer-slide-down 0.3s ease-out;
+}
+
+@keyframes smt-drawer-slide-down {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Bottom */
+.smt-drawer-content--bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    max-height: 80vh;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow:
+        0 -8px 24px rgba(0, 0, 0, 0.15),
+        0 -2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: var(--smt-radius-xl) var(--smt-radius-xl) 0 0;
+
+    animation: smt-drawer-slide-up 0.3s ease-out;
+}
+
+@keyframes smt-drawer-slide-up {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   Drawer Header
+   ========================================== */
+
+.smt-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--smt-space-lg);
+
+    padding: var(--smt-space-lg) var(--smt-space-xl);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.8) 0%,
+            rgba(250, 250, 247, 0.6) 100%);
+}
+
+.smt-drawer-title {
+    font-size: var(--smt-font-size-lg);
+    font-weight: var(--smt-font-weight-semibold);
+    color: var(--smt-text-primary);
+    margin: 0;
+}
+
+.smt-drawer-description {
+    font-size: var(--smt-font-size-sm);
+    color: var(--smt-text-secondary);
+    margin: var(--smt-space-xs) 0 0;
+}
+
+/* Close Button */
+.smt-drawer-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    background: var(--smt-gradient-button);
+    border: none;
+    border-radius: var(--smt-radius-full);
+
+    box-shadow: var(--smt-shadow-raised);
+
+    cursor: pointer;
+    transition:
+        transform var(--smt-transition-fast),
+        box-shadow var(--smt-transition-fast);
+}
+
+.smt-drawer-close:hover {
+    transform: scale(1.05);
+    box-shadow: var(--smt-shadow-raised-hover);
+}
+
+.smt-drawer-close:active {
+    transform: scale(0.95);
+    box-shadow: var(--smt-shadow-pressed);
+}
+
+.smt-drawer-close svg {
+    width: 16px;
+    height: 16px;
+    color: var(--smt-text-secondary);
+}
+
+/* ==========================================
+   Drawer Body
+   ========================================== */
+
+.smt-drawer-body {
+    flex: 1;
+    padding: var(--smt-space-xl);
+    overflow-y: auto;
+}
+
+/* ==========================================
+   Drawer Footer
+   ========================================== */
+
+.smt-drawer-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--smt-space-md);
+
+    padding: var(--smt-space-lg) var(--smt-space-xl);
+
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+
+    background: linear-gradient(180deg,
+            rgba(250, 250, 247, 0.6) 0%,
+            rgba(245, 245, 240, 0.8) 100%);
+}
+
+/* ==========================================
+   Drawer Sizes
+   ========================================== */
+
+.smt-drawer-content--sm.smt-drawer-content--right,
+.smt-drawer-content--sm.smt-drawer-content--left {
+    width: 320px;
+}
+
+.smt-drawer-content--lg.smt-drawer-content--right,
+.smt-drawer-content--lg.smt-drawer-content--left {
+    width: 560px;
+}
+
+.smt-drawer-content--xl.smt-drawer-content--right,
+.smt-drawer-content--xl.smt-drawer-content--left {
+    width: 720px;
+}
+
+.smt-drawer-content--full.smt-drawer-content--right,
+.smt-drawer-content--full.smt-drawer-content--left {
+    width: 100vw;
+}
+
+/* ==========================================
+   Mobile Handle (for bottom drawer)
+   ========================================== */
+
+.smt-drawer-handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--smt-space-md) 0;
+}
+
+.smt-drawer-handle-bar {
+    width: 36px;
+    height: 4px;
+    border-radius: var(--smt-radius-full);
+    background: rgba(0, 0, 0, 0.2);
+}

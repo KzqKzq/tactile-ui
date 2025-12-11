@@ -1,0 +1,29 @@
+# ScrollArea 滚动区域
+
+自定义滚动条样式的滚动区域。
+
+## 基础用法
+
+```vue preview
+<template>
+  <ScrollArea style="height: 200px; width: 300px;">
+    <div style="padding: 16px;">
+      <p v-for="i in 20" :key="i" style="margin-bottom: 8px;">
+        这是第 {{ i }} 行内容
+      </p>
+    </div>
+  </ScrollArea>
+</template>
+
+<script setup>
+import { ScrollArea } from '../../src/components'
+</script>
+```
+
+## API
+
+### Props
+
+| 属性 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| orientation | 滚动方向 | `'vertical' \| 'horizontal' \| 'both'` | `'vertical'` |

@@ -1,0 +1,96 @@
+# Tag 标签
+
+标签用于分类和标记内容。
+
+## 基础用法
+
+```vue preview
+<template>
+  <TagGroup>
+    <Tag>React</Tag>
+    <Tag>TypeScript</Tag>
+    <Tag>CSS</Tag>
+  </TagGroup>
+</template>
+
+<script setup>
+import { Tag, TagGroup } from '../../src/components'
+</script>
+```
+
+## 变体
+
+```vue preview
+<template>
+  <TagGroup>
+    <Tag>默认</Tag>
+    <Tag variant="primary">主要</Tag>
+    <Tag variant="solid">实心</Tag>
+  </TagGroup>
+</template>
+
+<script setup>
+import { Tag, TagGroup } from '../../src/components'
+</script>
+```
+
+## 带图标和计数
+
+```vue preview
+<template>
+  <TagGroup>
+    <Tag showIcon>前端开发</Tag>
+    <Tag showIcon count="42">JavaScript</Tag>
+    <Tag showIcon variant="primary" count="18">热门</Tag>
+  </TagGroup>
+</template>
+
+<script setup>
+import { Tag, TagGroup } from '../../src/components'
+</script>
+```
+
+## 可删除
+
+```vue preview
+<template>
+  <TagGroup>
+    <Tag removable>可删除标签</Tag>
+    <Tag removable variant="primary">主要标签</Tag>
+  </TagGroup>
+</template>
+
+<script setup>
+import { Tag, TagGroup } from '../../src/components'
+</script>
+```
+
+## 尺寸
+
+```vue preview
+<template>
+  <TagGroup>
+    <Tag size="sm">小标签</Tag>
+    <Tag size="md">默认</Tag>
+    <Tag size="lg">大标签</Tag>
+  </TagGroup>
+</template>
+
+<script setup>
+import { Tag, TagGroup } from '../../src/components'
+</script>
+```
+
+## API
+
+### Tag Props
+
+| 属性 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| variant | 变体 | `'default' \| 'primary' \| 'solid'` | `'default'` |
+| size | 尺寸 | `'sm' \| 'md' \| 'lg'` | `'md'` |
+| showIcon | 显示图标 | `boolean` | `false` |
+| count | 计数 | `number \| string` | - |
+| removable | 可删除 | `boolean` | `false` |
+| onRemove | 删除回调 | `() => void` | - |
+| href | 链接地址 | `string` | - |

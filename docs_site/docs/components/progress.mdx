@@ -1,0 +1,64 @@
+﻿# Progress 进度条
+
+进度条用于展示操作进度。
+
+## 基础用法
+
+```vue pure
+<template>
+  <div style="width: 300px;">
+    <Progress :value="65" />
+  </div>
+</template>
+
+<script setup>
+import { Progress } from '../../src/components'
+</script>
+```
+
+## 带标签
+
+```vue pure
+<template>
+  <div style="width: 300px;">
+    <Progress :value="45" label="下载进度" showValue />
+  </div>
+</template>
+
+<script setup>
+import { Progress } from '../../src/components'
+</script>
+```
+
+## 圆形进度
+
+```vue pure
+<template>
+  <div class="component-showcase">
+    <CircularProgress :value="75" size="sm" />
+    <CircularProgress :value="75" />
+    <CircularProgress :value="75" size="lg" showValue />
+  </div>
+</template>
+
+<script setup>
+import { CircularProgress } from '../../src/components'
+</script>
+```
+
+## API
+
+### Progress Props
+
+| 属性 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| value | 进度值 | `number` | `0` |
+| max | 最大值 | `number` | `100` |
+| size | 尺寸 | `'sm' \| 'md' \| 'lg'` | `'md'` |
+| label | 标签 | `string` | - |
+| showValue | 显示数值 | `boolean` | `false` |
+| formatValue | 格式化函数 | `(value: number, max: number) => string` | - |
+
+
+
+

@@ -1,0 +1,35 @@
+﻿# Smartisan UI 文档站
+
+欢迎来到 Smartisan UI 组件文档。这里收录了所有组件的使用示例、API 说明，并通过 `@rspress/plugin-preview` 实时预览示例代码。
+
+## 快速开始
+
+- 开发：在 `docs_site` 目录执行 `pnpm dev`（或 `npm run dev`）。  
+- 构建：`pnpm build`。  
+- 预览：`pnpm preview`。
+
+插件已在 `rspress.config.ts` 中配置：
+
+```ts
+import { defineConfig } from 'rspress/config';
+import { pluginPreview } from '@rspress/plugin-preview';
+
+export default defineConfig({
+  plugins: [pluginPreview()],
+});
+```
+
+## 文档导航
+
+- [组件索引](/components/)
+- 常用组件：
+  - [Accordion 手风琴](/components/accordion)
+  - [Alert 警告](/components/alert)
+  - [Tabs 选项卡](/components/tabs)
+  - [Toast 提示](/components/toast)
+
+更多组件请从侧边栏或组件索引进入。
+
+
+
+

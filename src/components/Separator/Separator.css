@@ -1,0 +1,176 @@
+/* ============================================
+   Smartisan Separator Component Styles
+   ============================================ */
+
+/* Base Separator */
+.smt-separator {
+    background: transparent;
+    flex-shrink: 0;
+}
+
+/* Horizontal Separator */
+.smt-separator[data-orientation="horizontal"] {
+    height: 1px;
+    width: 100%;
+
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(0, 0, 0, 0.12) 10%,
+            rgba(0, 0, 0, 0.12) 90%,
+            transparent 100%);
+
+    position: relative;
+}
+
+/* 3D groove effect */
+.smt-separator[data-orientation="horizontal"]::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.8) 10%,
+            rgba(255, 255, 255, 0.8) 90%,
+            transparent 100%);
+}
+
+/* Vertical Separator */
+.smt-separator[data-orientation="vertical"] {
+    width: 1px;
+    height: 100%;
+    min-height: 20px;
+
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(0, 0, 0, 0.12) 10%,
+            rgba(0, 0, 0, 0.12) 90%,
+            transparent 100%);
+
+    position: relative;
+}
+
+.smt-separator[data-orientation="vertical"]::after {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.8) 10%,
+            rgba(255, 255, 255, 0.8) 90%,
+            transparent 100%);
+}
+
+/* ==========================================
+   Separator Variants
+   ========================================== */
+
+/* Solid - no fade at edges */
+.smt-separator--solid[data-orientation="horizontal"] {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.smt-separator--solid[data-orientation="horizontal"]::after {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.smt-separator--solid[data-orientation="vertical"] {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.smt-separator--solid[data-orientation="vertical"]::after {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* Dashed */
+.smt-separator--dashed[data-orientation="horizontal"] {
+    background: repeating-linear-gradient(90deg,
+            rgba(0, 0, 0, 0.12) 0px,
+            rgba(0, 0, 0, 0.12) 6px,
+            transparent 6px,
+            transparent 12px);
+}
+
+.smt-separator--dashed::after {
+    display: none;
+}
+
+.smt-separator--dashed[data-orientation="vertical"] {
+    background: repeating-linear-gradient(180deg,
+            rgba(0, 0, 0, 0.12) 0px,
+            rgba(0, 0, 0, 0.12) 6px,
+            transparent 6px,
+            transparent 12px);
+}
+
+/* Thick */
+.smt-separator--thick[data-orientation="horizontal"] {
+    height: 2px;
+}
+
+.smt-separator--thick[data-orientation="vertical"] {
+    width: 2px;
+}
+
+/* ==========================================
+   Separator with Label
+   ========================================== */
+
+.smt-separator-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.smt-separator-wrapper .smt-separator {
+    flex: 1;
+}
+
+.smt-separator-label {
+    padding: 0 var(--smt-space-lg);
+    font-size: var(--smt-font-size-sm);
+    font-weight: var(--smt-font-weight-medium);
+    color: var(--smt-text-muted);
+    white-space: nowrap;
+}
+
+/* ==========================================
+   Spacing Options
+   ========================================== */
+
+.smt-separator-spacing-sm {
+    margin: var(--smt-space-sm) 0;
+}
+
+.smt-separator-spacing-md {
+    margin: var(--smt-space-md) 0;
+}
+
+.smt-separator-spacing-lg {
+    margin: var(--smt-space-lg) 0;
+}
+
+.smt-separator-spacing-xl {
+    margin: var(--smt-space-xl) 0;
+}
+
+.smt-separator[data-orientation="vertical"].smt-separator-spacing-sm {
+    margin: 0 var(--smt-space-sm);
+}
+
+.smt-separator[data-orientation="vertical"].smt-separator-spacing-md {
+    margin: 0 var(--smt-space-md);
+}
+
+.smt-separator[data-orientation="vertical"].smt-separator-spacing-lg {
+    margin: 0 var(--smt-space-lg);
+}
+
+.smt-separator[data-orientation="vertical"].smt-separator-spacing-xl {
+    margin: 0 var(--smt-space-xl);
+}

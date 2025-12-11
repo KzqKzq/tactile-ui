@@ -1,0 +1,90 @@
+# Card 卡片
+
+卡片是一个通用的容器组件，用于展示内容块。
+
+## 基础用法
+
+```vue preview
+<template>
+  <Card style="width: 320px;">
+    <CardHeader title="卡片标题" subtitle="卡片副标题" />
+    <CardBody>
+      这是卡片的内容区域，可以放置任意内容。
+    </CardBody>
+    <CardFooter>
+      <Button variant="ghost">取消</Button>
+      <Button variant="primary">确定</Button>
+    </CardFooter>
+  </Card>
+</template>
+
+<script setup>
+import { Card, CardHeader, CardBody, CardFooter, Button } from '../../src/components'
+</script>
+```
+
+## 卡片变体
+
+```vue preview
+<template>
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+    <Card variant="raised">
+      <CardBody>
+        <strong>Raised 凸起</strong>
+        <p>默认样式，带有明显的阴影效果</p>
+      </CardBody>
+    </Card>
+    <Card variant="inset">
+      <CardBody>
+        <strong>Inset 内凹</strong>
+        <p>内陷效果，适合作为输入区域</p>
+      </CardBody>
+    </Card>
+    <Card variant="flat">
+      <CardBody>
+        <strong>Flat 扁平</strong>
+        <p>无阴影，仅有边框</p>
+      </CardBody>
+    </Card>
+    <Card variant="glass">
+      <CardBody>
+        <strong>Glass 毛玻璃</strong>
+        <p>半透明毛玻璃效果</p>
+      </CardBody>
+    </Card>
+  </div>
+</template>
+
+<script setup>
+import { Card, CardBody } from '../../src/components'
+</script>
+```
+
+## 可交互卡片
+
+```vue preview
+<template>
+  <Card interactive style="width: 320px;">
+    <CardBody>
+      <strong>可点击的卡片</strong>
+      <p>鼠标悬停时有动画效果</p>
+    </CardBody>
+  </Card>
+</template>
+
+<script setup>
+import { Card, CardBody } from '../../src/components'
+</script>
+```
+
+## API
+
+### Card Props
+
+| 属性 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| variant | 卡片变体 | `'raised' \| 'inset' \| 'flat' \| 'glass'` | `'raised'` |
+| size | 尺寸 | `'sm' \| 'md' \| 'lg'` | `'md'` |
+| interactive | 是否可交互 | `boolean` | `false` |
+| textured | 是否有纹理 | `boolean` | `false` |
+| compact | 是否紧凑 | `boolean` | `false` |

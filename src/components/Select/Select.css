@@ -1,0 +1,262 @@
+/* ============================================
+   Smartisan Select Component Styles
+   ============================================ */
+
+/* Select Trigger */
+.smt-select-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--smt-space-md);
+
+    width: 100%;
+    min-width: 180px;
+    padding: var(--smt-space-md) var(--smt-space-lg);
+
+    font-family: var(--smt-font-family);
+    font-size: var(--smt-font-size-md);
+    color: var(--smt-text-primary);
+
+    background: var(--smt-gradient-button);
+    border: none;
+    border-radius: var(--smt-radius-md);
+
+    box-shadow: var(--smt-shadow-raised);
+
+    cursor: pointer;
+    transition:
+        box-shadow var(--smt-transition-fast),
+        transform var(--smt-transition-fast);
+}
+
+/* Inner highlight */
+.smt-select-trigger::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    right: 1px;
+    height: 40%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.5) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    border-radius: var(--smt-radius-md) var(--smt-radius-md) 50% 50%;
+    pointer-events: none;
+}
+
+.smt-select-trigger:hover {
+    box-shadow: var(--smt-shadow-raised-hover);
+    transform: translateY(-1px);
+}
+
+.smt-select-trigger:focus-visible {
+    outline: none;
+    box-shadow:
+        var(--smt-shadow-raised),
+        0 0 0 3px var(--smt-accent-glow);
+}
+
+.smt-select-trigger[data-state="open"] {
+    background: var(--smt-gradient-button-pressed);
+    box-shadow: var(--smt-shadow-pressed);
+    transform: translateY(1px);
+}
+
+.smt-select-trigger[data-disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Placeholder text */
+.smt-select-trigger[data-placeholder] .smt-select-value {
+    color: var(--smt-text-muted);
+}
+
+/* Select Value */
+.smt-select-value {
+    flex: 1;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Select Icon (chevron) */
+.smt-select-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: var(--smt-text-secondary);
+    transition: transform var(--smt-transition-fast);
+}
+
+.smt-select-trigger[data-state="open"] .smt-select-icon {
+    transform: rotate(180deg);
+}
+
+/* Select Content (dropdown) */
+.smt-select-content {
+    overflow: hidden;
+
+    background: linear-gradient(180deg,
+            #ffffff 0%,
+            #fafafa 50%,
+            #f5f5f0 100%);
+    border-radius: var(--smt-radius-lg);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    box-shadow: var(--smt-shadow-floating);
+
+    z-index: var(--smt-z-dropdown);
+
+    animation: smt-select-in 0.15s ease-out;
+}
+
+@keyframes smt-select-in {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Select Viewport */
+.smt-select-viewport {
+    padding: var(--smt-space-sm);
+}
+
+/* Select Item */
+.smt-select-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--smt-space-md);
+
+    padding: var(--smt-space-md) var(--smt-space-lg);
+    padding-left: 36px;
+
+    font-size: var(--smt-font-size-md);
+    color: var(--smt-text-primary);
+
+    border-radius: var(--smt-radius-md);
+
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+
+    transition: background var(--smt-transition-fast);
+}
+
+.smt-select-item:hover,
+.smt-select-item[data-highlighted] {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.smt-select-item[data-state="checked"] {
+    color: var(--smt-accent);
+    font-weight: var(--smt-font-weight-medium);
+}
+
+.smt-select-item[data-disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Item Indicator (checkmark) */
+.smt-select-item-indicator {
+    position: absolute;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    color: var(--smt-accent);
+}
+
+/* Select Group */
+.smt-select-group {
+    padding: var(--smt-space-sm) 0;
+}
+
+.smt-select-label {
+    padding: var(--smt-space-sm) var(--smt-space-lg);
+    font-size: var(--smt-font-size-xs);
+    font-weight: var(--smt-font-weight-semibold);
+    color: var(--smt-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Select Separator */
+.smt-select-separator {
+    height: 1px;
+    margin: var(--smt-space-sm) 0;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(0, 0, 0, 0.08) 20%,
+            rgba(0, 0, 0, 0.08) 80%,
+            transparent 100%);
+}
+
+/* Scroll buttons */
+.smt-select-scroll-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 28px;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0));
+    cursor: pointer;
+}
+
+.smt-select-scroll-button--down {
+    background: linear-gradient(to top,
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0));
+}
+
+/* ==========================================
+   Select Sizes
+   ========================================== */
+
+.smt-select-trigger--sm {
+    padding: var(--smt-space-sm) var(--smt-space-md);
+    font-size: var(--smt-font-size-sm);
+    min-width: 140px;
+}
+
+.smt-select-trigger--lg {
+    padding: var(--smt-space-lg) var(--smt-space-xl);
+    font-size: var(--smt-font-size-lg);
+    min-width: 220px;
+}
+
+/* ==========================================
+   Select with Label
+   ========================================== */
+
+.smt-select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smt-space-sm);
+}
+
+.smt-select-label-text {
+    font-size: var(--smt-font-size-sm);
+    font-weight: var(--smt-font-weight-medium);
+    color: var(--smt-text-primary);
+}
+
+.smt-select-label-text--required::after {
+    content: ' *';
+    color: var(--smt-error);
+}

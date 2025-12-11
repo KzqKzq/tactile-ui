@@ -1,0 +1,58 @@
+﻿# Badge 徽章
+
+徽章用于显示状态、计数等信息。
+
+## 基础用法
+
+```vue pure
+<template>
+  <div class="component-showcase">
+    <Badge content="5">
+      <Button>消息</Button>
+    </Badge>
+    <Badge content="99+">
+      <Button>通知</Button>
+    </Badge>
+    <Badge dot>
+      <Button>设置</Button>
+    </Badge>
+  </div>
+</template>
+
+<script setup>
+import { Badge, Button } from '../../src/components'
+</script>
+```
+
+## 独立使用
+
+```vue pure
+<template>
+  <div class="component-showcase">
+    <Badge content="新" standalone />
+    <Badge content="热门" standalone variant="primary" />
+    <Badge content="VIP" standalone variant="gold" />
+  </div>
+</template>
+
+<script setup>
+import { Badge } from '../../src/components'
+</script>
+```
+
+## API
+
+### Props
+
+| 属性 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| content | 徽章内容 | `string \| number` | - |
+| max | 最大值 | `number` | `99` |
+| dot | 红点模式 | `boolean` | `false` |
+| variant | 变体 | `'default' \| 'primary' \| 'success' \| 'warning' \| 'gold'` | `'default'` |
+| standalone | 独立使用 | `boolean` | `false` |
+| position | 位置 | `'top-right' \| 'top-left' \| 'bottom-right' \| 'bottom-left'` | `'top-right'` |
+
+
+
+

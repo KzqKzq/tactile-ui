@@ -1,0 +1,72 @@
+﻿# Checkbox 复选框
+
+复选框用于多选场景。
+
+## 基础用法
+
+```tsx preview
+import { Checkbox } from '../../src/components';
+
+export default function CheckboxDemo() {
+  return (
+    <div style={{ display: 'grid', gap: 12 }}>
+      <Checkbox label="选项 A" />
+      <Checkbox label="选项 B" defaultChecked />
+      <Checkbox label="选项 C" description="这是一个带描述的选项" />
+    </div>
+  );
+}
+```
+
+## 尺寸
+
+```tsx preview
+import { Checkbox } from '../../src/components';
+
+export default function CheckboxSizeDemo() {
+  return (
+    <div style={{ display: 'flex', gap: 12 }}>
+      <Checkbox size="sm" label="小" />
+      <Checkbox size="md" label="默认" />
+      <Checkbox size="lg" label="大" />
+    </div>
+  );
+}
+```
+
+## 不确定状态
+
+```tsx preview
+import { useState } from 'react';
+import { Checkbox } from '../../src/components';
+
+export default function CheckboxIndeterminateDemo() {
+  const [checked, setChecked] = useState<boolean | 'indeterminate'>('indeterminate');
+  return (
+    <Checkbox
+      label="全选"
+      checked={checked}
+      onCheckedChange={setChecked}
+      description="点击后切换到选中/未选中状态"
+    />
+  );
+}
+```
+
+## API
+
+### Props
+
+| 属性 | 说明 | 类型 | 默认值 |
+|------|------|------|--------|
+| checked | 是否选中 | `boolean \| 'indeterminate'` | - |
+| defaultChecked | 默认选中 | `boolean` | `false` |
+| onCheckedChange | 状态改变回调 | `(checked: boolean) => void` | - |
+| size | 尺寸 | `'sm' \| 'md' \| 'lg'` | `'md'` |
+| label | 标签文本 | `string` | - |
+| description | 描述文本 | `string` | - |
+| disabled | 是否禁用 | `boolean` | `false` |
+
+
+
+

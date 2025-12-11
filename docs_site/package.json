@@ -1,0 +1,20 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rspress dev",
+    "dev:preview": "set RSPRESS_PREVIEW=true&& rspress dev",
+    "build": "rspress build",
+    "build:preview": "set RSPRESS_PREVIEW=true&& rspress build",
+    "preview": "rspress preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rspress/plugin-preview": "^1.47.0",
+    "rspress": "^1.47.0"
+  }
+}

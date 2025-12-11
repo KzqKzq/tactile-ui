@@ -1,0 +1,168 @@
+/* ============================================
+   Smartisan Skeleton Component Styles
+   ============================================ */
+
+/* Base Skeleton */
+.smt-skeleton {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(180deg,
+            #e0e0e0 0%,
+            #d8d8d8 100%);
+    border-radius: var(--smt-radius-md);
+
+    box-shadow:
+        0 1px 2px 0 rgba(0, 0, 0, 0.06) inset;
+}
+
+/* Shimmer animation */
+.smt-skeleton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            transparent 100%);
+    background-size: 200% 100%;
+
+    animation: smt-skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes smt-skeleton-shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* ==========================================
+   Skeleton Variants
+   ========================================== */
+
+/* Text line */
+.smt-skeleton--text {
+    height: 16px;
+    width: 100%;
+    border-radius: var(--smt-radius-xs);
+}
+
+/* Circle (avatar) */
+.smt-skeleton--circle {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--smt-radius-full);
+}
+
+/* Rectangle (image/card) */
+.smt-skeleton--rect {
+    width: 100%;
+    height: 120px;
+}
+
+/* Button */
+.smt-skeleton--button {
+    height: 44px;
+    width: 100px;
+    border-radius: var(--smt-radius-md);
+}
+
+/* ==========================================
+   Skeleton Sizes
+   ========================================== */
+
+.smt-skeleton--xs {
+    height: 12px;
+}
+
+.smt-skeleton--sm {
+    height: 14px;
+}
+
+.smt-skeleton--lg {
+    height: 20px;
+}
+
+.smt-skeleton--xl {
+    height: 24px;
+}
+
+/* Circle sizes */
+.smt-skeleton--circle.smt-skeleton--xs {
+    width: 24px;
+    height: 24px;
+}
+
+.smt-skeleton--circle.smt-skeleton--sm {
+    width: 32px;
+    height: 32px;
+}
+
+.smt-skeleton--circle.smt-skeleton--lg {
+    width: 56px;
+    height: 56px;
+}
+
+.smt-skeleton--circle.smt-skeleton--xl {
+    width: 80px;
+    height: 80px;
+}
+
+/* ==========================================
+   Skeleton without animation
+   ========================================== */
+
+.smt-skeleton--static::after {
+    display: none;
+}
+
+/* ==========================================
+   Skeleton Group/Layout
+   ========================================== */
+
+.smt-skeleton-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smt-space-md);
+}
+
+/* Card skeleton */
+.smt-skeleton-card {
+    padding: var(--smt-space-lg);
+    background: var(--smt-surface);
+    border-radius: var(--smt-radius-lg);
+    box-shadow: var(--smt-shadow-raised);
+}
+
+/* User row skeleton */
+.smt-skeleton-user {
+    display: flex;
+    align-items: center;
+    gap: var(--smt-space-md);
+}
+
+.smt-skeleton-user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--smt-space-sm);
+}
+
+/* Paragraph skeleton */
+.smt-skeleton-paragraph {
+    display: flex;
+    flex-direction: column;
+    gap: var(--smt-space-sm);
+}
+
+.smt-skeleton-paragraph .smt-skeleton:last-child {
+    width: 60%;
+}

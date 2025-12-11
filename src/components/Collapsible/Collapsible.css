@@ -1,0 +1,125 @@
+/* ============================================
+   Smartisan Collapsible Component Styles
+   ============================================ */
+
+/* Collapsible Root */
+.smt-collapsible {
+    width: 100%;
+}
+
+/* Collapsible Trigger */
+.smt-collapsible-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--smt-space-md);
+    width: 100%;
+
+    padding: var(--smt-space-md) var(--smt-space-lg);
+
+    font-family: var(--smt-font-family);
+    font-size: var(--smt-font-size-md);
+    font-weight: var(--smt-font-weight-medium);
+    color: var(--smt-text-primary);
+    text-align: left;
+
+    background: var(--smt-gradient-button);
+    border: none;
+    border-radius: var(--smt-radius-md);
+
+    box-shadow: var(--smt-shadow-raised);
+
+    cursor: pointer;
+    transition:
+        box-shadow var(--smt-transition-fast),
+        transform var(--smt-transition-fast);
+}
+
+.smt-collapsible-trigger:hover {
+    box-shadow: var(--smt-shadow-raised-hover);
+    transform: translateY(-1px);
+}
+
+.smt-collapsible-trigger[data-state="open"] {
+    border-radius: var(--smt-radius-md) var(--smt-radius-md) 0 0;
+}
+
+/* Trigger Icon */
+.smt-collapsible-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: var(--smt-text-secondary);
+    transition: transform var(--smt-transition-normal);
+}
+
+.smt-collapsible-trigger[data-state="open"] .smt-collapsible-icon {
+    transform: rotate(180deg);
+}
+
+/* Collapsible Content */
+.smt-collapsible-content {
+    overflow: hidden;
+
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.8) 0%,
+            rgba(250, 250, 247, 0.9) 100%);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-top: none;
+    border-radius: 0 0 var(--smt-radius-md) var(--smt-radius-md);
+}
+
+.smt-collapsible-content[data-state="open"] {
+    animation: smt-collapsible-open 0.2s ease-out;
+}
+
+.smt-collapsible-content[data-state="closed"] {
+    animation: smt-collapsible-close 0.2s ease-out;
+}
+
+@keyframes smt-collapsible-open {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: var(--radix-collapsible-content-height);
+    }
+}
+
+@keyframes smt-collapsible-close {
+    from {
+        height: var(--radix-collapsible-content-height);
+    }
+
+    to {
+        height: 0;
+    }
+}
+
+.smt-collapsible-content-inner {
+    padding: var(--smt-space-lg);
+}
+
+/* ==========================================
+   Minimal Variant
+   ========================================== */
+
+.smt-collapsible--minimal .smt-collapsible-trigger {
+    background: transparent;
+    box-shadow: none;
+    padding: var(--smt-space-sm) 0;
+}
+
+.smt-collapsible--minimal .smt-collapsible-trigger:hover {
+    box-shadow: none;
+    transform: none;
+    color: var(--smt-accent);
+}
+
+.smt-collapsible--minimal .smt-collapsible-content {
+    background: transparent;
+    border: none;
+}

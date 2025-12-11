@@ -1,0 +1,425 @@
+/* ============================================
+   Smartisan UI Global Styles
+   ============================================ */
+
+@import './tokens.css';
+
+/* ==========================================
+   Reset & Base Styles
+   ========================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    font-family: var(--smt-font-family);
+    font-size: var(--smt-font-size-md);
+    font-weight: var(--smt-font-weight-normal);
+    line-height: var(--smt-line-height-normal);
+    color: var(--smt-text-primary);
+    background: var(--smt-bg);
+    min-height: 100vh;
+}
+
+/* ==========================================
+   Focus Styles
+   ========================================== */
+
+:focus-visible {
+    outline: 2px solid var(--smt-accent);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   Selection
+   ========================================== */
+
+::selection {
+    background: var(--smt-accent);
+    color: var(--smt-text-inverse);
+}
+
+/* ==========================================
+   Keyframe Animations
+   ========================================== */
+
+@keyframes smt-press {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(1px) scale(0.98);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes smt-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes smt-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes smt-glow-pulse {
+
+    0%,
+    100% {
+        box-shadow: var(--smt-shadow-glow-accent);
+    }
+
+    50% {
+        box-shadow:
+            0 0 12px 0 var(--smt-accent-glow),
+            0 0 24px 0 rgba(193, 39, 45, 0.3);
+    }
+}
+
+@keyframes smt-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes smt-fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes smt-fade-in-down {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes smt-scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes smt-slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes smt-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes smt-switch-thumb {
+    0% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(1.15);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+/* ==========================================
+   Utility Classes
+   ========================================== */
+
+/* Skeuomorphic Surface Classes */
+.smt-surface-raised {
+    background: var(--smt-gradient-button);
+    box-shadow: var(--smt-shadow-raised);
+    border: var(--smt-border-raised);
+}
+
+.smt-surface-inset {
+    background: var(--smt-surface-inset);
+    box-shadow: var(--smt-shadow-inset);
+    border: var(--smt-border-inset);
+}
+
+.smt-surface-floating {
+    background: var(--smt-gradient-glass);
+    box-shadow: var(--smt-shadow-floating);
+    border: var(--smt-border-light);
+    backdrop-filter: blur(12px);
+}
+
+/* Texture Overlays */
+.smt-texture-noise::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--smt-texture-noise);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.smt-texture-brushed::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--smt-texture-brushed);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Interactive States */
+.smt-pressable {
+    transition:
+        transform var(--smt-transition-fast),
+        box-shadow var(--smt-transition-fast),
+        background var(--smt-transition-fast);
+    cursor: pointer;
+    user-select: none;
+}
+
+.smt-pressable:hover {
+    box-shadow: var(--smt-shadow-raised-hover);
+}
+
+.smt-pressable:active {
+    transform: translateY(1px);
+    box-shadow: var(--smt-shadow-pressed);
+    background: var(--smt-gradient-button-pressed);
+}
+
+/* Highlight/Reflection Effect */
+.smt-highlight {
+    position: relative;
+    overflow: hidden;
+}
+
+.smt-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Glass Morphism */
+.smt-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================
+   Typography Utilities
+   ========================================== */
+
+.smt-text-xs {
+    font-size: var(--smt-font-size-xs);
+}
+
+.smt-text-sm {
+    font-size: var(--smt-font-size-sm);
+}
+
+.smt-text-md {
+    font-size: var(--smt-font-size-md);
+}
+
+.smt-text-lg {
+    font-size: var(--smt-font-size-lg);
+}
+
+.smt-text-xl {
+    font-size: var(--smt-font-size-xl);
+}
+
+.smt-text-2xl {
+    font-size: var(--smt-font-size-2xl);
+}
+
+.smt-text-3xl {
+    font-size: var(--smt-font-size-3xl);
+}
+
+.smt-font-normal {
+    font-weight: var(--smt-font-weight-normal);
+}
+
+.smt-font-medium {
+    font-weight: var(--smt-font-weight-medium);
+}
+
+.smt-font-semibold {
+    font-weight: var(--smt-font-weight-semibold);
+}
+
+.smt-font-bold {
+    font-weight: var(--smt-font-weight-bold);
+}
+
+/* ==========================================
+   Spacing Utilities
+   ========================================== */
+
+.smt-p-xs {
+    padding: var(--smt-space-xs);
+}
+
+.smt-p-sm {
+    padding: var(--smt-space-sm);
+}
+
+.smt-p-md {
+    padding: var(--smt-space-md);
+}
+
+.smt-p-lg {
+    padding: var(--smt-space-lg);
+}
+
+.smt-p-xl {
+    padding: var(--smt-space-xl);
+}
+
+.smt-m-xs {
+    margin: var(--smt-space-xs);
+}
+
+.smt-m-sm {
+    margin: var(--smt-space-sm);
+}
+
+.smt-m-md {
+    margin: var(--smt-space-md);
+}
+
+.smt-m-lg {
+    margin: var(--smt-space-lg);
+}
+
+.smt-m-xl {
+    margin: var(--smt-space-xl);
+}
+
+/* ==========================================
+   Border Radius Utilities
+   ========================================== */
+
+.smt-rounded-sm {
+    border-radius: var(--smt-radius-sm);
+}
+
+.smt-rounded-md {
+    border-radius: var(--smt-radius-md);
+}
+
+.smt-rounded-lg {
+    border-radius: var(--smt-radius-lg);
+}
+
+.smt-rounded-xl {
+    border-radius: var(--smt-radius-xl);
+}
+
+.smt-rounded-full {
+    border-radius: var(--smt-radius-full);
+}
+
+/* ==========================================
+   Animation Utilities
+   ========================================== */
+
+.smt-animate-press {
+    animation: smt-press 0.15s ease-out;
+}
+
+.smt-animate-bounce {
+    animation: smt-bounce 0.5s ease-in-out;
+}
+
+.smt-animate-pulse {
+    animation: smt-pulse 2s ease-in-out infinite;
+}
+
+.smt-animate-fade-in {
+    animation: smt-fade-in 0.2s ease-out;
+}
+
+.smt-animate-fade-in-up {
+    animation: smt-fade-in-up 0.25s ease-out;
+}
+
+.smt-animate-scale-in {
+    animation: smt-scale-in 0.2s ease-out;
+}
