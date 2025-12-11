@@ -4,102 +4,98 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <ContextMenu>
-    <ContextMenuTrigger class="context-menu-trigger">
-      在此区域点击右键
-    </ContextMenuTrigger>
-    <ContextMenuContent>
-      <ContextMenuItem>返回</ContextMenuItem>
-      <ContextMenuItem>前进</ContextMenuItem>
-      <ContextMenuItem>重新加载</ContextMenuItem>
-      <ContextMenuSeparator />
-      <ContextMenuItem>另存为...</ContextMenuItem>
-      <ContextMenuItem>打印...</ContextMenuItem>
-    </ContextMenuContent>
-  </ContextMenu>
-</template>
-
-<script setup>
-import { 
-  ContextMenu, 
-  ContextMenuTrigger, 
-  ContextMenuContent, 
+```tsx preview
+import {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
   ContextMenuItem,
-  ContextMenuSeparator
-} from '../../src/components'
-</script>
+  ContextMenuSeparator,
+} from '@kzqkzq/smartisan-ui';
 
-<style scoped>
-.context-menu-trigger {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  height: 150px;
-  border: 2px dashed rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  font-size: 14px;
-  color: #666;
-  user-select: none;
+const triggerStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 300,
+  height: 150,
+  border: '2px dashed rgba(0,0,0,0.1)',
+  borderRadius: 8,
+  fontSize: 14,
+  color: '#666',
+  userSelect: 'none',
+};
+
+export default function ContextMenuBasic() {
+  return (
+    <ContextMenu>
+      <ContextMenuTrigger asChild>
+        <div style={triggerStyle}>在此区域点击右键</div>
+      </ContextMenuTrigger>
+      <ContextMenuContent>
+        <ContextMenuItem>返回</ContextMenuItem>
+        <ContextMenuItem>前进</ContextMenuItem>
+        <ContextMenuItem>重新加载</ContextMenuItem>
+        <ContextMenuSeparator />
+        <ContextMenuItem>另存为...</ContextMenuItem>
+        <ContextMenuItem>打印...</ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
+  );
 }
-</style>
 ```
 
 ## 多级菜单
 
-```vue pure
-<template>
-  <ContextMenu>
-    <ContextMenuTrigger class="context-menu-trigger">
-      右键查看多级菜单
-    </ContextMenuTrigger>
-    <ContextMenuContent>
-      <ContextMenuItem>新建标签页</ContextMenuItem>
-      <ContextMenuItem>新建窗口</ContextMenuItem>
-      <ContextMenuSeparator />
-      <ContextMenuSub>
-        <ContextMenuSubTrigger>更多工具</ContextMenuSubTrigger>
-        <ContextMenuSubContent>
-          <ContextMenuItem>保存页面</ContextMenuItem>
-          <ContextMenuItem>创建快捷方式</ContextMenuItem>
-          <ContextMenuItem>开发者工具</ContextMenuItem>
-        </ContextMenuSubContent>
-      </ContextMenuSub>
-      <ContextMenuSeparator />
-      <ContextMenuItem danger>关闭</ContextMenuItem>
-    </ContextMenuContent>
-  </ContextMenu>
-</template>
-
-<script setup>
-import { 
-  ContextMenu, 
-  ContextMenuTrigger, 
-  ContextMenuContent, 
+```tsx preview
+import {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
   ContextMenuItem,
   ContextMenuSeparator,
   ContextMenuSub,
   ContextMenuSubTrigger,
-  ContextMenuSubContent
-} from '../../src/components'
-</script>
+  ContextMenuSubContent,
+} from '@kzqkzq/smartisan-ui';
 
-<style scoped>
-.context-menu-trigger {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  height: 150px;
-  border: 2px dashed rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  font-size: 14px;
-  color: #666;
-  user-select: none;
+const triggerStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: 300,
+  height: 150,
+  border: '2px dashed rgba(0,0,0,0.1)',
+  borderRadius: 8,
+  fontSize: 14,
+  color: '#666',
+  userSelect: 'none',
+};
+
+export default function ContextMenuNested() {
+  return (
+    <ContextMenu>
+      <ContextMenuTrigger asChild>
+        <div style={triggerStyle}>右键查看多级菜单</div>
+      </ContextMenuTrigger>
+      <ContextMenuContent>
+        <ContextMenuItem>新建标签页</ContextMenuItem>
+        <ContextMenuItem>新建窗口</ContextMenuItem>
+        <ContextMenuSeparator />
+        <ContextMenuSub>
+          <ContextMenuSubTrigger>更多工具</ContextMenuSubTrigger>
+          <ContextMenuSubContent>
+            <ContextMenuItem>保存页面</ContextMenuItem>
+            <ContextMenuItem>创建快捷方式</ContextMenuItem>
+            <ContextMenuItem>开发者工具</ContextMenuItem>
+          </ContextMenuSubContent>
+        </ContextMenuSub>
+        <ContextMenuSeparator />
+        <ContextMenuItem danger>关闭</ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
+  );
 }
-</style>
 ```
 
 ## API

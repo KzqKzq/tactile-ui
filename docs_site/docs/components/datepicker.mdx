@@ -4,30 +4,30 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <div style="width: 250px;">
-    <DatePicker placeholder="选择日期" />
-  </div>
-</template>
+```tsx preview
+import { DatePicker } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { DatePicker } from '../../src/components'
-</script>
+export default function DatePickerBasic() {
+  return (
+    <div style={{ width: 260 }}>
+      <DatePicker placeholder="选择日期" />
+    </div>
+  );
+}
 ```
 
 ## 带标签
 
-```vue pure
-<template>
-  <div style="width: 250px;">
-    <DatePicker label="出生日期" placeholder="选择日期" required />
-  </div>
-</template>
+```tsx preview
+import { DatePicker } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { DatePicker } from '../../src/components'
-</script>
+export default function DatePickerWithLabel() {
+  return (
+    <div style={{ width: 260 }}>
+      <DatePicker label="出生日期" placeholder="选择日期" required />
+    </div>
+  );
+}
 ```
 
 ## API

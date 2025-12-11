@@ -1,6 +1,9 @@
 // Smartisan UI Component Library
 // Export all components
 
+// Import global styles (tokens + base styles)
+import '../styles/global.css';
+
 // Core Components
 export { Button } from './Button';
 export type { ButtonProps } from './Button';

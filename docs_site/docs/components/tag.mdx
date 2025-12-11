@@ -4,81 +4,85 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <TagGroup>
-    <Tag>React</Tag>
-    <Tag>TypeScript</Tag>
-    <Tag>CSS</Tag>
-  </TagGroup>
-</template>
+```tsx preview
+import { Tag, TagGroup } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Tag, TagGroup } from '../../src/components'
-</script>
+export default function TagBasic() {
+  return (
+    <TagGroup>
+      <Tag>React</Tag>
+      <Tag>TypeScript</Tag>
+      <Tag>CSS</Tag>
+    </TagGroup>
+  );
+}
 ```
 
 ## 变体
 
-```vue pure
-<template>
-  <TagGroup>
-    <Tag>默认</Tag>
-    <Tag variant="primary">主要</Tag>
-    <Tag variant="solid">实心</Tag>
-  </TagGroup>
-</template>
+```tsx preview
+import { Tag, TagGroup } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Tag, TagGroup } from '../../src/components'
-</script>
+export default function TagVariants() {
+  return (
+    <TagGroup>
+      <Tag>默认</Tag>
+      <Tag variant="primary">主要</Tag>
+      <Tag variant="solid">实心</Tag>
+    </TagGroup>
+  );
+}
 ```
 
 ## 带图标和计数
 
-```vue pure
-<template>
-  <TagGroup>
-    <Tag showIcon>前端开发</Tag>
-    <Tag showIcon count="42">JavaScript</Tag>
-    <Tag showIcon variant="primary" count="18">热门</Tag>
-  </TagGroup>
-</template>
+```tsx preview
+import { Tag, TagGroup } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Tag, TagGroup } from '../../src/components'
-</script>
+export default function TagWithIcon() {
+  return (
+    <TagGroup>
+      <Tag showIcon>前端开发</Tag>
+      <Tag showIcon count="42">JavaScript</Tag>
+      <Tag showIcon variant="primary" count="18">
+        热门
+      </Tag>
+    </TagGroup>
+  );
+}
 ```
 
 ## 可删除
 
-```vue pure
-<template>
-  <TagGroup>
-    <Tag removable>可删除标签</Tag>
-    <Tag removable variant="primary">主要标签</Tag>
-  </TagGroup>
-</template>
+```tsx preview
+import { Tag, TagGroup } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Tag, TagGroup } from '../../src/components'
-</script>
+export default function TagRemovable() {
+  return (
+    <TagGroup>
+      <Tag removable>可删除标签</Tag>
+      <Tag removable variant="primary">
+        主要标签
+      </Tag>
+    </TagGroup>
+  );
+}
 ```
 
 ## 尺寸
 
-```vue pure
-<template>
-  <TagGroup>
-    <Tag size="sm">小标签</Tag>
-    <Tag size="md">默认</Tag>
-    <Tag size="lg">大标签</Tag>
-  </TagGroup>
-</template>
+```tsx preview
+import { Tag, TagGroup } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Tag, TagGroup } from '../../src/components'
-</script>
+export default function TagSizes() {
+  return (
+    <TagGroup>
+      <Tag size="sm">小标签</Tag>
+      <Tag size="md">默认</Tag>
+      <Tag size="lg">大标签</Tag>
+    </TagGroup>
+  );
+}
 ```
 
 ## API

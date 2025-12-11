@@ -4,24 +4,23 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <Drawer>
-    <DrawerTrigger as-child>
-      <Button>打开抽屉</Button>
-    </DrawerTrigger>
-    <DrawerContent position="right">
-      <DrawerBody>
-        <h3>抽屉内容</h3>
-        <p>这是抽屉的内容区域</p>
-      </DrawerBody>
-    </DrawerContent>
-  </Drawer>
-</template>
+```tsx preview
+import { Drawer, DrawerTrigger, DrawerContent, DrawerBody, Button } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Drawer, DrawerTrigger, DrawerContent, DrawerBody, Button } from '../../src/components'
-</script>
+export default function DrawerDemo() {
+  return (
+    <Drawer>
+      <DrawerTrigger asChild>
+        <Button>打开抽屉</Button>
+      </DrawerTrigger>
+      <DrawerContent position="right" title="抽屉标题" description="这是抽屉的内容区域">
+        <DrawerBody>
+          <p>可以在这里放置表单或说明文本。</p>
+        </DrawerBody>
+      </DrawerContent>
+    </Drawer>
+  );
+}
 ```
 
 ## API

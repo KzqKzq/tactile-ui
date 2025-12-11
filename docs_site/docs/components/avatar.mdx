@@ -4,55 +4,56 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <div class="component-showcase">
-    <Avatar src="https://i.pravatar.cc/100?u=1" />
-    <Avatar src="https://i.pravatar.cc/100?u=2" />
-    <Avatar fallback="张" />
-    <Avatar fallback="李" />
-  </div>
-</template>
+```tsx preview
+import { Avatar } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Avatar } from '../../src/components'
-</script>
+export default function AvatarBasic() {
+  return (
+    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+      <Avatar src="https://i.pravatar.cc/100?u=1" alt="用户1" />
+      <Avatar src="https://i.pravatar.cc/100?u=2" alt="用户2" />
+      <Avatar fallback="张" />
+      <Avatar fallback="李" />
+    </div>
+  );
+}
 ```
 
 ## 尺寸和形状
 
-```vue pure
-<template>
-  <div class="component-showcase">
-    <Avatar src="https://i.pravatar.cc/100?u=3" size="sm" />
-    <Avatar src="https://i.pravatar.cc/100?u=3" size="md" />
-    <Avatar src="https://i.pravatar.cc/100?u=3" size="lg" />
-    <Avatar src="https://i.pravatar.cc/100?u=3" size="xl" />
-    <Avatar src="https://i.pravatar.cc/100?u=3" shape="square" />
-  </div>
-</template>
+```tsx preview
+import { Avatar } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Avatar } from '../../src/components'
-</script>
+export default function AvatarSizes() {
+  return (
+    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+      <Avatar src="https://i.pravatar.cc/100?u=3" size="sm" />
+      <Avatar src="https://i.pravatar.cc/100?u=3" size="md" />
+      <Avatar src="https://i.pravatar.cc/100?u=3" size="lg" />
+      <Avatar src="https://i.pravatar.cc/100?u=3" size="xl" />
+      <Avatar src="https://i.pravatar.cc/100?u=3" shape="square" />
+      <Avatar src="https://i.pravatar.cc/100?u=3" shape="rounded" />
+    </div>
+  );
+}
 ```
 
 ## 头像组
 
-```vue pure
-<template>
-  <AvatarGroup max="3">
-    <Avatar src="https://i.pravatar.cc/100?u=1" />
-    <Avatar src="https://i.pravatar.cc/100?u=2" />
-    <Avatar src="https://i.pravatar.cc/100?u=3" />
-    <Avatar src="https://i.pravatar.cc/100?u=4" />
-    <Avatar src="https://i.pravatar.cc/100?u=5" />
-  </AvatarGroup>
-</template>
+```tsx preview
+import { Avatar, AvatarGroup } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Avatar, AvatarGroup } from '../../src/components'
-</script>
+export default function AvatarGroupDemo() {
+  return (
+    <AvatarGroup max={3}>
+      <Avatar src="https://i.pravatar.cc/100?u=1" />
+      <Avatar src="https://i.pravatar.cc/100?u=2" />
+      <Avatar src="https://i.pravatar.cc/100?u=3" />
+      <Avatar src="https://i.pravatar.cc/100?u=4" />
+      <Avatar src="https://i.pravatar.cc/100?u=5" />
+    </AvatarGroup>
+  );
+}
 ```
 
 ## API

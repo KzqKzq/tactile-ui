@@ -4,21 +4,20 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <Pagination
-    :currentPage="currentPage"
-    :totalPages="20"
-    @page-change="currentPage = $event"
-  />
-</template>
+```tsx preview
+import { useState } from 'react';
+import { Pagination } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { ref } from 'vue'
-import { Pagination } from '../../src/components'
+export default function PaginationDemo() {
+  const [page, setPage] = useState(1);
 
-const currentPage = ref(1)
-</script>
+  return (
+    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+      <Pagination currentPage={page} totalPages={20} onPageChange={setPage} />
+      <span style={{ color: 'var(--smt-text-secondary)' }}>当前第 {page} 页</span>
+    </div>
+  );
+}
 ```
 
 ## API

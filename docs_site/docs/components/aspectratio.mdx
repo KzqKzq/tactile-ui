@@ -4,22 +4,22 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <div style="width: 300px;">
-    <AspectRatio :ratio="16/9" rounded shadow>
-      <img 
-        src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=450&fit=crop" 
-        alt="示例图片"
-        style="width: 100%; height: 100%; object-fit: cover;"
-      />
-    </AspectRatio>
-  </div>
-</template>
+```tsx preview
+import { AspectRatio } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { AspectRatio } from '../../src/components'
-</script>
+export default function AspectRatioDemo() {
+  return (
+    <div style={{ width: 320 }}>
+      <AspectRatio ratio={16 / 9} rounded shadow>
+        <img
+          src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=450&fit=crop"
+          alt="示例图片"
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      </AspectRatio>
+    </div>
+  );
+}
 ```
 
 ## API

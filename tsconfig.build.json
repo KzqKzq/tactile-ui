@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": false,
+    "noEmit": true
+  },
+  "include": ["src/components/**/*", "src/styles/**/*"]
+}

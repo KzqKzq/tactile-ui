@@ -4,24 +4,24 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <AuthorHoverCard
-    name="张三"
-    bio="前端开发工程师，热爱开源"
-    :avatar="Avatar"
-    :stats="[
-      { label: '文章', value: '42' },
-      { label: '粉丝', value: '1.2k' }
-    ]"
-  >
-    <Button variant="ghost">@张三</Button>
-  </AuthorHoverCard>
-</template>
+```tsx preview
+import { AuthorHoverCard, Button, Avatar } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { AuthorHoverCard, Button, Avatar } from '../../src/components'
-</script>
+export default function HoverCardDemo() {
+  return (
+    <AuthorHoverCard
+      name="张三"
+      bio="前端开发工程师，热爱开源"
+      avatar={<Avatar fallback="张" />}
+      stats={[
+        { label: '文章', value: '42' },
+        { label: '粉丝', value: '1.2k' },
+      ]}
+    >
+      <Button variant="ghost">@张三</Button>
+    </AuthorHoverCard>
+  );
+}
 ```
 
 ## API

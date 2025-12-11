@@ -1,20 +1,29 @@
 import { defineConfig } from 'rspress/config';
 import { pluginPreview } from '@rspress/plugin-preview';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const enablePreview = process.env.RSPRESS_PREVIEW === 'true';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
     root: 'docs',
-    plugins: enablePreview
-        ? [
-              pluginPreview({
-                  defaultRenderMode: 'pure',
-              }),
-          ]
-        : [],
+    plugins: [
+        pluginPreview({
+            defaultRenderMode: 'preview',
+        }),
+    ],
     markdown: {
         mdxRs: false,
     },
+    // 全局注入组件库样式
+    globalStyles: path.join(
+        __dirname,
+        'node_modules',
+        '@kzqkzq',
+        'smartisan-ui',
+        'dist',
+        'index.css'
+    ),
     themeConfig: {
         nav: [
             { text: '首页', link: '/' },
@@ -46,7 +55,7 @@ export default defineConfig({
                         { text: 'Pagination 分页', link: '/components/pagination' },
                         { text: 'Progress 进度条', link: '/components/progress' },
                         { text: 'Radio 单选框', link: '/components/radio' },
-                        { text: 'ScrollArea 滚动区', link: '/components/scrollarea' },
+                        { text: 'ScrollArea 滚动区域', link: '/components/scrollarea' },
                         { text: 'Select 选择器', link: '/components/select' },
                         { text: 'Separator 分割线', link: '/components/separator' },
                         { text: 'Skeleton 骨架屏', link: '/components/skeleton' },

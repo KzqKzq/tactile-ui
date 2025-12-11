@@ -4,21 +4,21 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <Collapsible style="width: 300px;">
-    <CollapsibleTrigger>点击展开/收起</CollapsibleTrigger>
-    <CollapsibleContent>
-      <p style="padding: 16px;">
-        这是可折叠的内容区域，点击上方按钮可以展开或收起。
-      </p>
-    </CollapsibleContent>
-  </Collapsible>
-</template>
+```tsx preview
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '../../src/components'
-</script>
+export default function CollapsibleDemo() {
+  return (
+    <Collapsible style={{ width: 320 }}>
+      <CollapsibleTrigger>点击展开 / 收起</CollapsibleTrigger>
+      <CollapsibleContent>
+        <p style={{ padding: 16, margin: 0 }}>
+          这是可折叠的内容区域，点击上方按钮可以展开或收起。
+        </p>
+      </CollapsibleContent>
+    </Collapsible>
+  );
+}
 ```
 
 ## API

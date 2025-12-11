@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import './Input.css';
 
 export interface InputProps
-    extends React.InputHTMLAttributes<HTMLInputElement> {
+    extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
     /** Size of the input */
     size?: 'sm' | 'md' | 'lg';
     /** Visual state */

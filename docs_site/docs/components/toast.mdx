@@ -7,7 +7,7 @@ Toast 用于全局展示操作反馈信息。
 点击按钮触发不同类型的消息提示。
 
 ```tsx preview
-import { Button, ToastProvider, useToast } from '../../src/components';
+import { Button, ToastProvider, useToast } from '@kzqkzq/smartisan-ui';
 
 function ToastButtons() {
   const { addToast } = useToast();
@@ -54,9 +54,9 @@ export default function ToastDemo() {
 1. 在应用根组件包裹 `ToastProvider`
 2. 使用 `useToast` hook 获取 `addToast` 方法
 
-```tsx
+```tsx pure
 // App.tsx
-import { ToastProvider } from '../../src/components';
+import { ToastProvider } from '@kzqkzq/smartisan-ui';
 
 function App() {
   return (
@@ -67,9 +67,9 @@ function App() {
 }
 ```
 
-```tsx
+```tsx pure
 // 在组件中使用
-import { useToast } from '../../src/components';
+import { useToast } from '@kzqkzq/smartisan-ui';
 
 function MyComponent() {
   const { addToast } = useToast();
@@ -100,7 +100,3 @@ function MyComponent() {
 | title | 标题 | `string` | - |
 | description | 描述 | `string` | - |
 | action | 操作按钮 | `ReactNode` | - |
-
-
-
-

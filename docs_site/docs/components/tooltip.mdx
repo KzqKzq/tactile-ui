@@ -4,24 +4,24 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <div class="component-showcase">
-    <SimpleTooltip content="这是一个提示">
-      <Button>悬停查看</Button>
-    </SimpleTooltip>
-    <SimpleTooltip content="顶部提示" side="top">
-      <Button>顶部</Button>
-    </SimpleTooltip>
-    <SimpleTooltip content="右侧提示" side="right">
-      <Button>右侧</Button>
-    </SimpleTooltip>
-  </div>
-</template>
+```tsx preview
+import { SimpleTooltip, Button } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { SimpleTooltip, Button } from '../../src/components'
-</script>
+export default function TooltipDemo() {
+  return (
+    <div style={{ display: 'flex', gap: 12 }}>
+      <SimpleTooltip content="这是一个提示">
+        <Button>悬停查看</Button>
+      </SimpleTooltip>
+      <SimpleTooltip content="顶部提示" side="top">
+        <Button>顶部</Button>
+      </SimpleTooltip>
+      <SimpleTooltip content="右侧提示" side="right">
+        <Button>右侧</Button>
+      </SimpleTooltip>
+    </div>
+  );
+}
 ```
 
 ## API

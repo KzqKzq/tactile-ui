@@ -4,31 +4,31 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <DropdownMenu>
-    <DropdownMenuTrigger as-child>
-      <Button>打开菜单</Button>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent>
-      <DropdownMenuItem>个人资料</DropdownMenuItem>
-      <DropdownMenuItem>设置</DropdownMenuItem>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem danger>退出登录</DropdownMenuItem>
-    </DropdownMenuContent>
-  </DropdownMenu>
-</template>
-
-<script setup>
-import { 
-  DropdownMenu, 
-  DropdownMenuTrigger, 
-  DropdownMenuContent, 
+```tsx preview
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  Button 
-} from '../../src/components'
-</script>
+  Button,
+} from '@kzqkzq/smartisan-ui';
+
+export default function DropdownMenuDemo() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button>打开菜单</Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuItem>个人资料</DropdownMenuItem>
+        <DropdownMenuItem>设置</DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem danger>退出登录</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
 ```
 
 ## API

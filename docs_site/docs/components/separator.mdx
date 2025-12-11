@@ -4,34 +4,34 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <div>
-    <p>上方内容</p>
-    <Separator />
-    <p>下方内容</p>
-  </div>
-</template>
+```tsx preview
+import { Separator } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Separator } from '../../src/components'
-</script>
+export default function SeparatorBasic() {
+  return (
+    <div style={{ display: 'grid', gap: 8 }}>
+      <p>上方内容</p>
+      <Separator />
+      <p>下方内容</p>
+    </div>
+  );
+}
 ```
 
 ## 带标签
 
-```vue pure
-<template>
-  <div>
-    <p>上方内容</p>
-    <Separator label="或者" />
-    <p>下方内容</p>
-  </div>
-</template>
+```tsx preview
+import { Separator } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Separator } from '../../src/components'
-</script>
+export default function SeparatorWithLabel() {
+  return (
+    <div style={{ display: 'grid', gap: 8 }}>
+      <p>上方内容</p>
+      <Separator label="或者" />
+      <p>下方内容</p>
+    </div>
+  );
+}
 ```
 
 ## API

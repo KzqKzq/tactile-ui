@@ -4,20 +4,21 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <RadioGroup v-model="value">
-    <RadioItem value="option1" label="选项 1" />
-    <RadioItem value="option2" label="选项 2" />
-    <RadioItem value="option3" label="选项 3" />
-  </RadioGroup>
-</template>
+```tsx preview
+import { useState } from 'react';
+import { RadioGroup, RadioItem } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { ref } from 'vue'
-import { RadioGroup, RadioItem } from '../../src/components'
-const value = ref('option1')
-</script>
+export default function RadioDemo() {
+  const [value, setValue] = useState('option1');
+
+  return (
+    <RadioGroup value={value} onValueChange={setValue}>
+      <RadioItem value="option1" label="选项 1" />
+      <RadioItem value="option2" label="选项 2" />
+      <RadioItem value="option3" label="选项 3" />
+    </RadioGroup>
+  );
+}
 ```
 
 ## API

@@ -1,11 +1,21 @@
 {
-  "name": "smartisan",
-  "private": true,
-  "version": "0.0.0",
+  "name": "@kzqkzq/smartisan-ui",
+  "private": false,
+  "version": "0.0.2",
   "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsup",
     "lint": "eslint .",
     "preview": "vite preview",
     "docs:dev": "rspress dev",
@@ -44,6 +54,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitepress-demo-preview/component": "^2.6.1",
     "@vitepress-demo-preview/plugin": "^1.4.1",
+    "tsup": "^8.5.1",
     "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",

@@ -4,44 +4,42 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <div style="width: 300px;">
-    <Skeleton style="height: 20px; width: 100%;" />
-    <Skeleton style="height: 20px; width: 80%; margin-top: 8px;" />
-    <Skeleton style="height: 20px; width: 60%; margin-top: 8px;" />
-  </div>
-</template>
+```tsx preview
+import { Skeleton } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Skeleton } from '../../src/components'
-</script>
+export default function SkeletonBasic() {
+  return (
+    <div style={{ width: 320 }}>
+      <Skeleton style={{ height: 20, width: '100%' }} />
+      <Skeleton style={{ height: 20, width: '80%', marginTop: 8 }} />
+      <Skeleton style={{ height: 20, width: '60%', marginTop: 8 }} />
+    </div>
+  );
+}
 ```
 
 ## 用户骨架屏
 
-```vue pure
-<template>
-  <SkeletonUser />
-</template>
+```tsx preview
+import { SkeletonUser } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { SkeletonUser } from '../../src/components'
-</script>
+export default function SkeletonUserDemo() {
+  return <SkeletonUser />;
+}
 ```
 
 ## 卡片骨架屏
 
-```vue pure
-<template>
-  <div style="width: 320px;">
-    <SkeletonCard />
-  </div>
-</template>
+```tsx preview
+import { SkeletonCard } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { SkeletonCard } from '../../src/components'
-</script>
+export default function SkeletonCardDemo() {
+  return (
+    <div style={{ width: 320 }}>
+      <SkeletonCard />
+    </div>
+  );
+}
 ```
 
 ## API

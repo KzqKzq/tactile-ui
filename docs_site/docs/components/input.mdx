@@ -4,70 +4,66 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <div class="component-showcase-vertical" style="width: 300px;">
-    <Input placeholder="请输入内容" />
-    <Input label="用户名" placeholder="请输入用户名" />
-    <Input label="邮箱" placeholder="请输入邮箱" type="email" required />
-  </div>
-</template>
+```tsx preview
+import { Input } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Input } from '../../src/components'
-</script>
+export default function InputBasic() {
+  return (
+    <div style={{ display: 'grid', gap: 12, width: 320 }}>
+      <Input placeholder="请输入内容" />
+      <Input label="用户名" placeholder="请输入用户名" />
+      <Input label="邮箱" placeholder="请输入邮箱" type="email" required />
+    </div>
+  );
+}
 ```
 
 ## 输入状态
 
-```vue pure
-<template>
-  <div class="component-showcase-vertical" style="width: 300px;">
-    <Input label="成功状态" state="success" helperText="验证通过" />
-    <Input label="错误状态" state="error" helperText="请输入有效的邮箱地址" />
-    <Input label="禁用状态" disabled value="不可编辑" />
-  </div>
-</template>
+```tsx preview
+import { Input } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Input } from '../../src/components'
-</script>
+export default function InputStates() {
+  return (
+    <div style={{ display: 'grid', gap: 12, width: 320 }}>
+      <Input label="成功状态" state="success" helperText="验证通过" />
+      <Input label="错误状态" state="error" helperText="请输入有效的邮箱地址" />
+      <Input label="禁用状态" disabled value="不可编辑" />
+    </div>
+  );
+}
 ```
 
 ## 尺寸
 
-```vue pure
-<template>
-  <div class="component-showcase-vertical" style="width: 300px;">
-    <Input size="sm" placeholder="小尺寸" />
-    <Input size="md" placeholder="默认尺寸" />
-    <Input size="lg" placeholder="大尺寸" />
-  </div>
-</template>
+```tsx preview
+import { Input } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Input } from '../../src/components'
-</script>
+export default function InputSizes() {
+  return (
+    <div style={{ display: 'grid', gap: 12, width: 320 }}>
+      <Input size="sm" placeholder="小尺寸" />
+      <Input size="md" placeholder="默认尺寸" />
+      <Input size="lg" placeholder="大尺寸" />
+    </div>
+  );
+}
 ```
 
 ## 多行文本
 
 使用 `Textarea` 组件输入多行文本。
 
-```vue pure
-<template>
-  <div style="width: 400px;">
-    <Textarea 
-      label="个人简介" 
-      placeholder="请介绍一下自己..."
-      :rows="4"
-    />
-  </div>
-</template>
+```tsx preview
+import { Textarea } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Textarea } from '../../src/components'
-</script>
+export default function TextareaDemo() {
+  return (
+    <div style={{ width: 380 }}>
+      <Textarea label="个人简介" placeholder="请介绍一下自己..." rows={4} />
+    </div>
+  );
+}
 ```
 
 ## API

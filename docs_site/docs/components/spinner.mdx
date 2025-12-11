@@ -4,34 +4,34 @@
 
 ## 圆形 Spinner
 
-```vue pure
-<template>
-  <div class="component-showcase">
-    <Spinner size="sm" />
-    <Spinner />
-    <Spinner size="lg" />
-  </div>
-</template>
+```tsx preview
+import { Spinner } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Spinner } from '../../src/components'
-</script>
+export default function SpinnerCircle() {
+  return (
+    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+      <Spinner size="sm" />
+      <Spinner />
+      <Spinner size="lg" />
+    </div>
+  );
+}
 ```
 
 ## 点状 Spinner
 
-```vue pure
-<template>
-  <div class="component-showcase">
-    <DotsSpinner size="sm" />
-    <DotsSpinner />
-    <DotsSpinner size="lg" />
-  </div>
-</template>
+```tsx preview
+import { DotsSpinner } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { DotsSpinner } from '../../src/components'
-</script>
+export default function SpinnerDots() {
+  return (
+    <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+      <DotsSpinner size="sm" />
+      <DotsSpinner />
+      <DotsSpinner size="lg" />
+    </div>
+  );
+}
 ```
 
 ## API

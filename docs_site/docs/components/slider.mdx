@@ -4,30 +4,30 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <div style="width: 300px;">
-    <Slider :defaultValue="[50]" />
-  </div>
-</template>
+```tsx preview
+import { Slider } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Slider } from '../../src/components'
-</script>
+export default function SliderBasic() {
+  return (
+    <div style={{ width: 320 }}>
+      <Slider defaultValue={[50]} />
+    </div>
+  );
+}
 ```
 
 ## 显示数值
 
-```vue pure
-<template>
-  <div style="width: 300px;">
-    <Slider :defaultValue="[50]" showValue label="音量" />
-  </div>
-</template>
+```tsx preview
+import { Slider } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Slider } from '../../src/components'
-</script>
+export default function SliderWithValue() {
+  return (
+    <div style={{ width: 320 }}>
+      <Slider defaultValue={[50]} showValue label="音量" />
+    </div>
+  );
+}
 ```
 
 ## API

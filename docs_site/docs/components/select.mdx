@@ -4,23 +4,23 @@
 
 ## 基础用法
 
-```vue pure
-<template>
-  <div style="width: 200px;">
-    <Select>
-      <SelectTrigger placeholder="请选择" />
-      <SelectContent>
-        <SelectItem value="option1">选项 1</SelectItem>
-        <SelectItem value="option2">选项 2</SelectItem>
-        <SelectItem value="option3">选项 3</SelectItem>
-      </SelectContent>
-    </Select>
-  </div>
-</template>
+```tsx preview
+import { Select, SelectTrigger, SelectContent, SelectItem } from '@kzqkzq/smartisan-ui';
 
-<script setup>
-import { Select, SelectTrigger, SelectContent, SelectItem } from '../../src/components'
-</script>
+export default function SelectDemo() {
+  return (
+    <div style={{ width: 220 }}>
+      <Select>
+        <SelectTrigger placeholder="请选择" />
+        <SelectContent>
+          <SelectItem value="option1">选项 1</SelectItem>
+          <SelectItem value="option2">选项 2</SelectItem>
+          <SelectItem value="option3">选项 3</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
+  );
+}
 ```
 
 ## API
