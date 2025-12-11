@@ -1,0 +1,155 @@
+# Button 按钮
+
+按钮用于触发一个操作，如提交表单、打开对话框或取消操作。
+
+## 基础用法
+
+Tactile UI 的按钮采用拟物化设计，具有真实的按压效果和光影细节。
+
+```tsx preview
+import { Button } from "@kzqkzq/tactile-ui";
+
+export default function ButtonDemo() {
+  return (
+    <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+      <Button variant="primary">主要按钮</Button>
+      <Button variant="default">默认按钮</Button>
+      <Button variant="secondary">次要按钮</Button>
+    </div>
+  );
+}
+```
+
+## 变体 (Variants)
+
+提供多种视觉风格以适应不同的层级和场景。
+
+```tsx preview
+import { Button } from "@kzqkzq/tactile-ui";
+
+export default function ButtonVariants() {
+  return (
+    <div
+      style={{
+        display: "flex",
+        gap: 16,
+        alignItems: "center",
+        flexWrap: "wrap",
+      }}
+    >
+      <Button variant="primary">Primary</Button>
+      <Button variant="default">Default</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="danger">Danger</Button>
+      <Button variant="ghost">Ghost</Button>
+    </div>
+  );
+}
+```
+
+## 尺寸 (Sizes)
+
+支持 `sm`, `md`, `lg` 三种尺寸。
+
+```tsx preview
+import { Button } from "@kzqkzq/tactile-ui";
+
+export default function ButtonSizes() {
+  return (
+    <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+      <Button size="sm">Small</Button>
+      <Button size="md">Medium</Button>
+      <Button size="lg">Large</Button>
+    </div>
+  );
+}
+```
+
+## 加载状态
+
+按钮可以设置为加载状态，此时会显示加载动画并禁用点击。
+
+```tsx preview
+import { Button } from "@kzqkzq/tactile-ui";
+
+export default function ButtonLoading() {
+  return (
+    <div style={{ display: "flex", gap: 16 }}>
+      <Button loading>加载中</Button>
+      <Button variant="primary" loading>
+        提交中
+      </Button>
+    </div>
+  );
+}
+```
+
+## 图标按钮
+
+可以在文字前后添加图标，或者仅显示图标。
+
+```tsx preview
+import { Button } from "@kzqkzq/tactile-ui";
+
+// 简单的 SVG 图标组件
+const SearchIcon = () => (
+  <svg
+    width="15"
+    height="15"
+    viewBox="0 0 15 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10 6.5C10 8.433 8.433 10 6.5 10C4.567 10 3 8.433 3 6.5C3 4.567 4.567 3 6.5 3C8.433 3 10 4.567 10 6.5ZM9.30884 10.0159C8.53901 10.6318 7.56251 11 6.5 11C4.01472 11 2 8.98528 2 6.5C2 4.01472 4.01472 2 6.5 2C8.98528 2 11 4.01472 11 6.5C11 7.56251 10.6318 8.53901 10.0159 9.30884L12.8536 12.1464C13.0488 12.3417 13.0488 12.6583 12.8536 12.8536C12.6583 13.0488 12.3417 13.0488 12.1464 12.8536L9.30884 10.0159Z"
+      fill="currentColor"
+      fillRule="evenodd"
+      clipRule="evenodd"
+    ></path>
+  </svg>
+);
+
+const TrashIcon = () => (
+  <svg
+    width="15"
+    height="15"
+    viewBox="0 0 15 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.5 1C5.22386 1 5 1.22386 5 1.5C5 1.77614 5.22386 2 5.5 2H9.5C9.77614 2 10 1.77614 10 1.5C10 1.22386 9.77614 1 9.5 1H5.5ZM3 3.5C3 3.22386 3.22386 3 3.5 3H11.5C11.7761 3 12 3.22386 12 3.5C12 3.77614 11.7761 4 11.5 4H11V12C11 12.5523 10.5523 13 10 13H5C4.44772 13 4 12.5523 4 12V4L3.5 4C3.22386 4 3 3.77614 3 3.5ZM5 4H10V12H5V4Z"
+      fill="currentColor"
+      fillRule="evenodd"
+      clipRule="evenodd"
+    ></path>
+  </svg>
+);
+
+export default function ButtonIcons() {
+  return (
+    <div style={{ display: "flex", gap: 16 }}>
+      <Button iconLeft={<SearchIcon />}>搜索</Button>
+      <Button variant="danger" iconRight={<TrashIcon />}>
+        删除
+      </Button>
+      <Button variant="secondary" iconOnly aria-label="搜索">
+        <SearchIcon />
+      </Button>
+    </div>
+  );
+}
+```
+
+## API
+
+| 属性      | 说明           | 类型                                                           | 默认值      |
+| --------- | -------------- | -------------------------------------------------------------- | ----------- |
+| variant   | 按钮变体风格   | `'default' \| 'primary' \| 'secondary' \| 'ghost' \| 'danger'` | `'default'` |
+| size      | 按钮尺寸       | `'sm' \| 'md' \| 'lg'`                                         | `'md'`      |
+| loading   | 是否为加载状态 | `boolean`                                                      | `false`     |
+| disabled  | 是否禁用       | `boolean`                                                      | `false`     |
+| iconLeft  | 左侧图标       | `ReactNode`                                                    | -           |
+| iconRight | 右侧图标       | `ReactNode`                                                    | -           |
+| iconOnly  | 是否仅显示图标 | `boolean`                                                      | `false`     |
+| onClick   | 点击事件处理器 | `(event: React.MouseEvent) => void`                            | -           |

@@ -2,10 +2,15 @@ docs_site
 components_backup
 node_modules
 public
-dist
 doc_build
 coverage
 *.log
 npm-debug.log*
 pnpm-lock.yaml
 package-lock.json
+src
+*.tgz
+index.html
+vite.config.ts
+tsconfig*.json
+eslint.config.js

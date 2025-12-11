@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@kzqkzq/smartisan-ui": "^0.0.2"
+    "@kzqkzq/tactile-ui": "^0.0.2"
   },
   "devDependencies": {
     "@rspress/plugin-preview": "^1.47.0",

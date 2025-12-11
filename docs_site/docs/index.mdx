@@ -1,35 +1,88 @@
-﻿# Smartisan UI 文档站
+﻿---
+pageType: home
 
-欢迎来到 Smartisan UI 组件文档。这里收录了所有组件的使用示例、API 说明，并通过 `@rspress/plugin-preview` 实时预览示例代码。
+hero:
+  name: Tactile UI
+  text: 触感设计组件库
+  tagline: 灵感源自 Smartisan OS 的拟物化 React 组件库
+  actions:
+    - theme: brand
+      text: 快速开始
+      link: /components/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/kzqkzq
+  image:
+    src: /logo.svg
+    alt: Tactile UI Logo
 
-## 快速开始
+features:
+  - title: 🎨 拟物化设计
+    details: 精心打造的拟物化视觉效果，渐变、阴影、纹理等细节营造真实质感
+  - title: ⚡️ 高性能
+    details: 基于 Radix UI 无样式组件开发，确保卓越的可访问性与性能
+  - title: 🔧 类型安全
+    details: 使用 TypeScript 编写，完整的类型定义让开发更安心
+  - title: 📦 开箱即用
+    details: 30+ 精美组件，覆盖常见业务场景，安装即可使用
+  - title: 🎯 设计令牌
+    details: 统一的设计系统，CSS 变量驱动，轻松定制主题
+  - title: 🌙 暗色模式
+    details: 内置暗色模式支持，让你的应用在任何环境下都表现出色
+---
 
-- 开发：在 `docs_site` 目录执行 `pnpm dev`（或 `npm run dev`）。  
-- 构建：`pnpm build`。  
-- 预览：`pnpm preview`。
+## 安装
 
-插件已在 `rspress.config.ts` 中配置：
+```bash
+# npm
+npm install @kzqkzq/tactile-ui
 
-```ts
-import { defineConfig } from 'rspress/config';
-import { pluginPreview } from '@rspress/plugin-preview';
+# pnpm
+pnpm add @kzqkzq/tactile-ui
 
-export default defineConfig({
-  plugins: [pluginPreview()],
-});
+# yarn
+yarn add @kzqkzq/tactile-ui
 ```
 
-## 文档导航
+## 快速上手
 
-- [组件索引](/components/)
-- 常用组件：
-  - [Accordion 手风琴](/components/accordion)
-  - [Alert 警告](/components/alert)
-  - [Tabs 选项卡](/components/tabs)
-  - [Toast 提示](/components/toast)
+```tsx
+import { Button, Card, CardBody } from "@kzqkzq/tactile-ui";
+import "@kzqkzq/tactile-ui/style.css";
 
-更多组件请从侧边栏或组件索引进入。
+function App() {
+  return (
+    <Card>
+      <CardBody>
+        <h2>Hello, Tactile UI!</h2>
+        <Button variant="primary">开始体验</Button>
+      </CardBody>
+    </Card>
+  );
+}
 
+export default App;
+```
 
+## 设计理念
 
+Tactile UI 的设计灵感来源于 Smartisan OS 的拟物化设计语言。我们相信，好的界面应该有触感、有温度。通过精心调配的渐变、阴影和微动效，让数字界面也能传递真实世界的质感。
 
+### 核心原则
+
+- **真实感** — 模拟物理世界的光影效果
+- **一致性** — 统一的设计语言和交互模式
+- **可访问性** — 符合 WCAG 标准的无障碍设计
+- **性能优先** — 按需加载，极致优化
+
+---
+
+<div
+  style={{
+    textAlign: "center",
+    marginTop: "48px",
+    color: "var(--smt-text-muted)",
+  }}
+>
+  Made with ❤️ by <strong>KZQ</strong>
+</div>

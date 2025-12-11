@@ -1,0 +1,174 @@
+/* Import Tactile UI component library styles */
+@import '@kzqkzq/tactile-ui/style.css';
+
+/* Tactile UI Documentation Custom Theme Styles */
+
+:root {
+  /* Primary brand colors - Smartisan Red */
+  --rp-c-brand: #c1272d;
+  --rp-c-brand-light: #e63946;
+  --rp-c-brand-dark: #9b1f24;
+  --rp-c-brand-darker: #7a181c;
+
+  /* Background colors */
+  --rp-c-bg: #f5f5f0;
+  --rp-c-bg-soft: #eaeae5;
+  --rp-c-bg-mute: #e0e0db;
+
+  /* Text colors */
+  --rp-c-text-1: #1a1a2e;
+  --rp-c-text-2: #5a5a6e;
+  --rp-c-text-3: #8a8a9e;
+
+  /* Border */
+  --rp-c-divider: rgba(0, 0, 0, 0.08);
+  --rp-c-divider-light: rgba(0, 0, 0, 0.05);
+}
+
+/* Dark mode overrides */
+.dark {
+  --rp-c-bg: #1a1a2e;
+  --rp-c-bg-soft: #2d2d44;
+  --rp-c-bg-mute: #3a3a50;
+  --rp-c-text-1: #f5f5f0;
+  --rp-c-text-2: #b0b0c0;
+  --rp-c-text-3: #8a8a9e;
+  --rp-c-divider: rgba(255, 255, 255, 0.1);
+  --rp-c-divider-light: rgba(255, 255, 255, 0.05);
+}
+
+/* Hero section enhancements */
+.rspress-home-hero {
+  padding-top: 80px !important;
+  padding-bottom: 80px !important;
+}
+
+.rspress-home-hero-title {
+  background: linear-gradient(135deg, #c1272d 0%, #e63946 50%, #c1272d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700 !important;
+}
+
+.rspress-home-hero-desc {
+  font-size: 1.25rem !important;
+  color: var(--rp-c-text-2) !important;
+}
+
+/* Feature cards - skeuomorphic style */
+.rspress-home-feature {
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #f5f5f0 5%,
+    #e8e8e3 95%,
+    #d8d8d3 100%
+  ) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.9) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.05) inset, 0 1px 2px 0 rgba(0, 0, 0, 0.1),
+    0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 4px 8px 0 rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.2s ease-out !important;
+}
+
+.rspress-home-feature:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.95) inset,
+    0 -1px 0 0 rgba(0, 0, 0, 0.03) inset, 0 2px 4px 0 rgba(0, 0, 0, 0.12),
+    0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 8px 16px 0 rgba(0, 0, 0, 0.08) !important;
+}
+
+.dark .rspress-home-feature {
+  background: linear-gradient(
+    180deg,
+    #3a3a50 0%,
+    #2d2d44 50%,
+    #1a1a2e 100%
+  ) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Sidebar enhancements */
+.rspress-sidebar {
+  background: var(--rp-c-bg-soft) !important;
+}
+
+.rspress-sidebar-nav-item:hover {
+  background: var(--rp-c-bg-mute) !important;
+}
+
+/* Button enhancements */
+.rspress-nav-menu-item:hover,
+.rspress-doc-nav-button:hover {
+  color: var(--rp-c-brand) !important;
+}
+
+/* Code blocks */
+.rspress-doc pre {
+  border-radius: 8px !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) inset !important;
+}
+
+/* Preview container improvements */
+.rspress-preview-container {
+  border-radius: 12px !important;
+  overflow: hidden;
+  border: 1px solid var(--rp-c-divider) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Tables */
+.rspress-doc table {
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+.rspress-doc th {
+  background: var(--rp-c-bg-soft) !important;
+  font-weight: 600 !important;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--rp-c-bg-soft);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rp-c-text-3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rp-c-text-2);
+}
+
+/* Footer styling */
+.rspress-footer {
+  border-top: 1px solid var(--rp-c-divider) !important;
+  background: var(--rp-c-bg-soft) !important;
+}
+
+/* Smooth transitions */
+* {
+  scroll-behavior: smooth;
+}
+
+a,
+button {
+  transition: all 0.2s ease-out;
+}
+
+/* Custom component preview styling */
+.rspress-preview {
+  background: var(--rp-c-bg) !important;
+  padding: 24px !important;
+}
