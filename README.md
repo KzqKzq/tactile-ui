@@ -32,6 +32,9 @@
   <a href="#documentation">Documentation</a>
 </p>
 
+> [!IMPORTANT]
+> **Disclaimer**: This project is for personal learning, testing, and communication purposes only. Please do **NOT** use it in a production environment. The author assumes no responsibility for any issues arising from the use of this project.
+
 ---
 
 ## 🎨 Features
