@@ -7,6 +7,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
     root: 'docs',
+    base: '/tactile-ui/', // GitHub Pages base path
     title: 'Tactile UI',
     description: '灵感源自 Smartisan OS 的拟物化 React 组件库',
     icon: '/logo.svg',
